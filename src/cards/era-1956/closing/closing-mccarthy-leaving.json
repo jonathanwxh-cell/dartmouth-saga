@@ -14,7 +14,7 @@
     "portrait": "mccarthy.png",
     "title": "Dartmouth"
   },
-  "prompt": "John McCarthy is heading to MIT in the fall and says there may be an assistant's position for you. The offer arrives quietly, as if a decade of your life were only another folder to initial.",
+  "prompt": "John McCarthy talks about MIT — perhaps in a year or two, perhaps with Minsky alongside him — and says there may be an assistant's position for you when it happens. The offer arrives quietly, as if a decade of your life were only another folder to initial.",
   "left": {
     "label": "Accept MIT post",
     "effects": {

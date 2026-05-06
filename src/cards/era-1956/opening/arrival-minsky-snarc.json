@@ -1,0 +1,39 @@
+{
+  "id": "arrival-minsky-snarc",
+  "era": "1956",
+  "weight": 10,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Marvin Minsky",
+    "portrait": "minsky.png",
+    "title": "Princeton"
+  },
+  "prompt": "Marvin Minsky arrives with Princeton notes on Snarc, the stochastic neural net he and Dean Edmonds built in 1951. He asks for bench space with the cheer of a man who has never had to find a soldering iron in Hanover.",
+  "left": {
+    "label": "Clear bench space",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "compute": -3.2
+    },
+    "flags": [
+      "minsky-arrived"
+    ]
+  },
+  "right": {
+    "label": "Send him to drafts",
+    "effects": {
+      "team_morale": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "minsky-arrived"
+    ]
+  }
+}

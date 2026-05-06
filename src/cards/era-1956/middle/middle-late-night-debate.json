@@ -1,0 +1,39 @@
+{
+  "id": "middle-late-night-debate",
+  "era": "1956",
+  "weight": 5,
+  "flags_required": [
+    "middle-started"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "John McCarthy and Marvin Minsky argue at 2 a.m. over logic, learning, and half a pack of Pall Malls. The ashtray has become the only neutral party in Dartmouth.",
+  "left": {
+    "label": "Side with logic",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "late-night-debate-held"
+    ]
+  },
+  "right": {
+    "label": "Side with learning",
+    "effects": {
+      "academic_credibility": 3.2,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "late-night-debate-held"
+    ]
+  }
+}

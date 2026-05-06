@@ -1,0 +1,40 @@
+{
+  "id": "opening-rochester-704-tape",
+  "era": "1956",
+  "weight": 8,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Nathaniel Rochester",
+    "portrait": "rochester.png",
+    "title": "IBM"
+  },
+  "prompt": "Nathaniel Rochester leaves a box of IBM 704 magnetic tapes on your desk, each labeled in his handwriting: neural model - small. The box looks too modest to contain the future, which is exactly how machines prefer to arrive.",
+  "left": {
+    "label": "Debug with Rochester",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "compute": -3.2,
+      "academic_credibility": 2.4
+    },
+    "flags": [
+      "rochester-tape-handled"
+    ]
+  },
+  "right": {
+    "label": "File it for later",
+    "effects": {
+      "symbolic_progress": -4.4,
+      "team_morale": 3.5
+    },
+    "flags": [
+      "rochester-tape-handled"
+    ]
+  }
+}

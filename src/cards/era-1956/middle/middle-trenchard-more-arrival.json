@@ -1,0 +1,39 @@
+{
+  "id": "middle-trenchard-more-arrival",
+  "era": "1956",
+  "weight": 5,
+  "flags_required": [
+    "middle-started"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Trenchard More",
+    "portrait": "more.png",
+    "title": "Princeton"
+  },
+  "prompt": "Trenchard More arrives from Princeton wanting to discuss logical foundations and Lukasiewicz multi-valued logic. The topic enters the room with a suitcase and no promise to leave on schedule.",
+  "left": {
+    "label": "Host the session",
+    "effects": {
+      "academic_credibility": 3.2,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "more-session-handled"
+    ]
+  },
+  "right": {
+    "label": "Call it side work",
+    "effects": {
+      "academic_credibility": -3.2,
+      "symbolic_progress": 4.2
+    },
+    "flags": [
+      "more-session-handled"
+    ]
+  }
+}

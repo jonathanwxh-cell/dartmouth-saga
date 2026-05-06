@@ -1,0 +1,39 @@
+{
+  "id": "closing-final-week-tedium",
+  "era": "1956",
+  "weight": 4,
+  "flags_required": [
+    "closing-started"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Dean's Secretary",
+    "portrait": "dean-secretary.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "Eight people remain in Hanover, and you spend a day filing Dartmouth reimbursement receipts. History, at close range, is mostly travel forms and bad carbon paper.",
+  "left": {
+    "label": "File everything",
+    "effects": {
+      "funding": 3.5,
+      "public_trust": 2.6,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "final-week-paperwork"
+    ]
+  },
+  "right": {
+    "label": "Hand them off",
+    "effects": {
+      "team_morale": 3.5,
+      "funding": -3.2
+    },
+    "flags": [
+      "final-week-paperwork"
+    ]
+  }
+}

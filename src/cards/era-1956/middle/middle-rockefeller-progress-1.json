@@ -1,0 +1,41 @@
+{
+  "id": "middle-rockefeller-progress-1",
+  "era": "1956",
+  "weight": 8,
+  "flags_required": [
+    "middle-started",
+    "lt-demonstrated"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Warren Weaver",
+    "portrait": "weaver.png",
+    "title": "Rockefeller Foundation"
+  },
+  "prompt": "Warren Weaver writes that a five-paragraph Rockefeller progress note is due by July 15. He asks what programs are running, a plural that makes the room inspect its shoes.",
+  "left": {
+    "label": "Lead with Theorist",
+    "effects": {
+      "public_trust": 3.5,
+      "funding": 3.5
+    },
+    "flags": [
+      "rockefeller-progress-report-sent"
+    ]
+  },
+  "right": {
+    "label": "Lead conceptually",
+    "effects": {
+      "academic_credibility": 3.2,
+      "funding": -3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "rockefeller-progress-report-sent"
+    ]
+  }
+}

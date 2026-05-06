@@ -1,0 +1,38 @@
+{
+  "id": "closing-the-cover-memo",
+  "era": "1956",
+  "weight": 8,
+  "flags_required": [
+    "closing-started"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "The final Dartmouth cover memo is one paragraph signed by McCarthy, Minsky, Rochester, and Shannon. You type the final draft, which means you are close enough to history to smudge it.",
+  "left": {
+    "label": "Credit yourself",
+    "effects": {
+      "team_morale": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "cover-memo-typed"
+    ]
+  },
+  "right": {
+    "label": "Keep four signers",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "cover-memo-typed"
+    ]
+  }
+}

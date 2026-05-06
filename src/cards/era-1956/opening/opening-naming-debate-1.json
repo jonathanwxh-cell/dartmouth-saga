@@ -1,0 +1,45 @@
+{
+  "id": "opening-naming-debate-1",
+  "era": "1956",
+  "weight": 14,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "At the second-day kitchen table, John McCarthy says \"artificial intelligence\" again, and the phrase lands among the coffee cups like a lit match. Claude Shannon answers with \"automata studies,\" a term grant officers can hold without gloves.",
+  "left": {
+    "label": "Back McCarthy",
+    "effects": {
+      "symbolic_progress": 5.3,
+      "academic_credibility": -3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "naming-debate-held",
+      "naming-position-set",
+      "term-ai-defended"
+    ]
+  },
+  "right": {
+    "label": "Back Shannon",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "naming-debate-held",
+      "naming-position-set",
+      "term-automata-studies"
+    ]
+  }
+}

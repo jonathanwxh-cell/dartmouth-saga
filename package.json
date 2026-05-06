@@ -10,6 +10,8 @@
     "test": "vitest run",
     "test:ui": "vitest --ui",
     "typecheck": "tsc --noEmit",
+    "simulate": "tsx scripts/simulate-runs.ts",
+    "generate-music": "tsx scripts/generate-music.ts",
     "validate-cards": "tsx scripts/validate-cards.ts",
     "treat-portrait": "node scripts/treat-portrait.mjs"
   },

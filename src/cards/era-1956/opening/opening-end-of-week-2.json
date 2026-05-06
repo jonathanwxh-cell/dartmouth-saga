@@ -1,0 +1,55 @@
+{
+  "id": "opening-end-of-week-2",
+  "era": "1956",
+  "weight": 12,
+  "flags_required": [
+    "proposal-read",
+    "shannon-arrived",
+    "minsky-arrived",
+    "rochester-arrived",
+    "solomonoff-invitation-handled",
+    "naming-debate-held",
+    "typewriter-settled",
+    "cybernetics-addressed",
+    "rochester-tape-handled",
+    "minsky-coffee-held",
+    "dean-briefed",
+    "rockefeller-initial-reply",
+    "drafting-assigned",
+    "press-call-handled",
+    "more-invitation-handled",
+    "naming-revisited",
+    "funding-reviewed"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "Two weeks in, Steele Hall contains ten people, too many cups, and a half-written Dartmouth proposal. Newell and Simon are due tomorrow, and someone proposes a swim in the Connecticut River as if water has ever settled a grant.",
+  "left": {
+    "label": "Go swimming",
+    "effects": {
+      "team_morale": 4.4,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "opening-complete"
+    ]
+  },
+  "right": {
+    "label": "Stay at the desk",
+    "effects": {
+      "symbolic_progress": 5.3,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "opening-complete"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "closing-trim-the-budget",
+  "era": "1956",
+  "weight": 7,
+  "flags_required": [
+    "closing-started",
+    "rockefeller-approved"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Warren Weaver",
+    "portrait": "weaver.png",
+    "title": "Rockefeller Foundation"
+  },
+  "prompt": "The $7,500 must cover stipends, travel, and IBM 704 obligations, and it cannot be made larger by staring at it. The Dartmouth ledger now requires a theory of pain allocation.",
+  "left": {
+    "label": "Cut Solomonoff",
+    "effects": {
+      "funding": 3.5,
+      "symbolic_progress": -4.4,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "budget-trimmed"
+    ]
+  },
+  "right": {
+    "label": "Cut McCarthy",
+    "effects": {
+      "funding": 3.5,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "budget-trimmed"
+    ]
+  }
+}

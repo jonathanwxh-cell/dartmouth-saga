@@ -1,0 +1,40 @@
+{
+  "id": "closing-shannon-final-letter",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "closing-started",
+    "shannon-engaged"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Claude Shannon",
+    "portrait": "shannon.png",
+    "title": "Bell Labs"
+  },
+  "prompt": "Claude Shannon writes from Bell Labs that he is pleased with the workshop's tone but wants his name removed from later publicity. Even his gratitude arrives with a boundary condition.",
+  "left": {
+    "label": "Honor Shannon",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "shannon-publicity-set"
+    ]
+  },
+  "right": {
+    "label": "Push back",
+    "effects": {
+      "academic_credibility": -3.2,
+      "public_trust": 3.5,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "shannon-publicity-set"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "closing-mccarthy-thanks",
+  "era": "1956",
+  "weight": 5,
+  "flags_required": [
+    "closing-started"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "John McCarthy hands you a typewritten recommendation letter, useful for any post that believes recommendations more than salaries. The paper is warm from the Underwood.",
+  "left": {
+    "label": "Accept the letter",
+    "effects": {
+      "team_morale": 3.5,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "thanks-letter-received"
+    ]
+  },
+  "right": {
+    "label": "Decline for now",
+    "effects": {
+      "team_morale": -3.2,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "thanks-letter-received"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "middle-minsky-newell-clash",
+  "era": "1956",
+  "weight": 9,
+  "flags_required": [
+    "middle-started",
+    "lt-demonstrated"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Marvin Minsky",
+    "portrait": "minsky.png",
+    "title": "Princeton"
+  },
+  "prompt": "Marvin Minsky calls Logic Theorist a stamp-collecting program; Allen Newell calls Snarc an analog toy. The room falls silent, satisfied that progress has found its natural predator.",
+  "left": {
+    "label": "Stay out of it",
+    "effects": {
+      "academic_credibility": -4.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "clash-handled"
+    ]
+  },
+  "right": {
+    "label": "Force common ground",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "clash-handled"
+    ]
+  }
+}

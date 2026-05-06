@@ -1,0 +1,40 @@
+{
+  "id": "opening-trenchard-more",
+  "era": "1956",
+  "weight": 5,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Trenchard More",
+    "portrait": "more.png",
+    "title": "Princeton"
+  },
+  "prompt": "Trenchard More writes from Princeton that he can come for two weeks if Dartmouth has a topic fit for a graduate student and a railway fare. Logical reasoning, he suggests, is at least cheaper than a new machine.",
+  "left": {
+    "label": "Invite More",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "funding": -3.2
+    },
+    "flags": [
+      "more-invitation-handled",
+      "more-invited"
+    ]
+  },
+  "right": {
+    "label": "Defer More",
+    "effects": {
+      "funding": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "more-invitation-handled"
+    ]
+  }
+}

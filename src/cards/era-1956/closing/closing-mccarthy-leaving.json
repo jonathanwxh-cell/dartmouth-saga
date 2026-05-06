@@ -1,0 +1,40 @@
+{
+  "id": "closing-mccarthy-leaving",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "closing-started"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "John McCarthy is heading to MIT in the fall and says there may be an assistant's position for you. The offer arrives quietly, as if a decade of your life were only another folder to initial.",
+  "left": {
+    "label": "Accept MIT post",
+    "effects": {
+      "team_morale": 3.5,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "trajectory-set",
+      "trajectory-mit"
+    ]
+  },
+  "right": {
+    "label": "Stay at Dartmouth",
+    "effects": {
+      "academic_credibility": -3.2,
+      "symbolic_progress": 4.2
+    },
+    "flags": [
+      "trajectory-set",
+      "trajectory-dartmouth"
+    ]
+  }
+}

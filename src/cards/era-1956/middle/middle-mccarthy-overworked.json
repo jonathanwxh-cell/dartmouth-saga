@@ -1,0 +1,39 @@
+{
+  "id": "middle-mccarthy-overworked",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "middle-started"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "John McCarthy has not slept in two nights and keeps crossing out definitions of intelligence. \"Maybe the term is wrong after all,\" he says, committing the nearest thing to apostasy available in Steele Hall.",
+  "left": {
+    "label": "Hold the line",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "mccarthy-focus-set"
+    ]
+  },
+  "right": {
+    "label": "Send him outside",
+    "effects": {
+      "team_morale": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "mccarthy-focus-set"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "middle-newell-simon-arrival",
+  "era": "1956",
+  "weight": 100,
+  "flags_required": [
+    "opening-complete"
+  ],
+  "flags_forbidden": [
+    "middle-started",
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Allen Newell",
+    "portrait": "newell.png",
+    "title": "RAND"
+  },
+  "prompt": "Allen Newell and Herbert Simon arrive from RAND and Carnegie Tech with punched cards labeled LOGIC THEORIST and an annotated Principia Mathematica Volume II. Their luggage looks ordinary; their confidence does not.",
+  "left": {
+    "label": "Give the 704 slot",
+    "effects": {
+      "symbolic_progress": 5.3,
+      "compute": -4.2,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "middle-started"
+    ]
+  },
+  "right": {
+    "label": "Make them share",
+    "effects": {
+      "compute": 3.5,
+      "academic_credibility": -4.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "middle-started"
+    ]
+  }
+}

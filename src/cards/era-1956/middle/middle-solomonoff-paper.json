@@ -1,0 +1,41 @@
+{
+  "id": "middle-solomonoff-paper",
+  "era": "1956",
+  "weight": 7,
+  "flags_required": [
+    "middle-started",
+    "solomonoff-stays"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Ray Solomonoff",
+    "portrait": "solomonoff.png",
+    "title": "Dartmouth workshop"
+  },
+  "prompt": "Ray Solomonoff brings you a draft on inductive inference for the Cybernetics Conference. It is dense enough to require its own stipend and possibly a better class of coffee.",
+  "left": {
+    "label": "Read it carefully",
+    "effects": {
+      "academic_credibility": 3.2,
+      "symbolic_progress": 4.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "solomonoff-paper-handled"
+    ]
+  },
+  "right": {
+    "label": "Refocus the draft",
+    "effects": {
+      "academic_credibility": -3.2,
+      "team_morale": 3.5
+    },
+    "flags": [
+      "solomonoff-paper-handled"
+    ]
+  }
+}

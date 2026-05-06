@@ -1,0 +1,39 @@
+{
+  "id": "closing-second-progress-report",
+  "era": "1956",
+  "weight": 5,
+  "flags_required": [
+    "closing-started"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Warren Weaver",
+    "portrait": "weaver.png",
+    "title": "Rockefeller Foundation"
+  },
+  "prompt": "Rockefeller wants a final summary by mid-September, two pages and no romance. Warren Weaver does not say \"no romance,\" but foundation stationery implies it.",
+  "left": {
+    "label": "Write it carefully",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "final-summary-planned"
+    ]
+  },
+  "right": {
+    "label": "Let McCarthy write",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "final-summary-planned"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "opening-dartmouth-dean",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John Kemeny",
+    "portrait": "kemeny.png",
+    "title": "Dartmouth Math"
+  },
+  "prompt": "John Kemeny stops by from Dartmouth mathematics to ask what, precisely, is being claimed in public. The college likes distinction; it likes headlines less, especially before lunch.",
+  "left": {
+    "label": "Show caution",
+    "effects": {
+      "public_trust": 3.5,
+      "academic_credibility": 2.4,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "dean-briefed"
+    ]
+  },
+  "right": {
+    "label": "Show full claims",
+    "effects": {
+      "public_trust": -4.2,
+      "symbolic_progress": 4.2
+    },
+    "flags": [
+      "dean-briefed"
+    ]
+  }
+}

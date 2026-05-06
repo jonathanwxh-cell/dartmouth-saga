@@ -1,0 +1,41 @@
+{
+  "id": "opening-mccarthy-pen",
+  "era": "1956",
+  "weight": 8,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "John McCarthy hands you a fountain pen and a stack of foolscap in Steele Hall. \"You can write better than I can,\" he says, which may be praise, delegation, or a trap with ink in it.",
+  "left": {
+    "label": "Take the pen",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "team_morale": 3.5
+    },
+    "flags": [
+      "drafting-assigned",
+      "proposal-drafting-yours"
+    ]
+  },
+  "right": {
+    "label": "Leave him the pen",
+    "effects": {
+      "symbolic_progress": -4.4,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "drafting-assigned",
+      "proposal-drafting-mccarthy"
+    ]
+  }
+}

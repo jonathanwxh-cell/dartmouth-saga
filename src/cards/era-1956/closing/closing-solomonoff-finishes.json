@@ -1,0 +1,39 @@
+{
+  "id": "closing-solomonoff-finishes",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "closing-started",
+    "solomonoff-stays"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Ray Solomonoff",
+    "portrait": "solomonoff.png",
+    "title": "Dartmouth workshop"
+  },
+  "prompt": "Ray Solomonoff finishes a draft on inductive inference, a seed that will keep growing toward algorithmic information theory. In 1956 it is still just pages on your desk, looking underfunded and immortal.",
+  "left": {
+    "label": "List him fully",
+    "effects": {
+      "academic_credibility": 3.2,
+      "symbolic_progress": 4.2
+    },
+    "flags": [
+      "solomonoff-finished"
+    ]
+  },
+  "right": {
+    "label": "Let it stand apart",
+    "effects": {
+      "team_morale": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "solomonoff-finished"
+    ]
+  }
+}

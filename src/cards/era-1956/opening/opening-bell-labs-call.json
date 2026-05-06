@@ -1,0 +1,40 @@
+{
+  "id": "opening-bell-labs-call",
+  "era": "1956",
+  "weight": 5,
+  "flags_required": [
+    "proposal-read",
+    "shannon-engaged"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Claude Shannon",
+    "portrait": "shannon.png",
+    "title": "Bell Labs"
+  },
+  "prompt": "Claude Shannon takes a Bell Labs call and returns with his attention folded neatly elsewhere. He says he may need to head back early, the way a man says the weather may not consult you.",
+  "left": {
+    "label": "Delay the trip",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "bell-labs-call-handled"
+    ]
+  },
+  "right": {
+    "label": "Plan around it",
+    "effects": {
+      "academic_credibility": -3.2,
+      "team_morale": 3.5
+    },
+    "flags": [
+      "bell-labs-call-handled"
+    ]
+  }
+}

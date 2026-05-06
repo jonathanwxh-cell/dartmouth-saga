@@ -1,0 +1,47 @@
+{
+  "id": "closing-the-summer-ends",
+  "era": "1956",
+  "weight": 100,
+  "flags_required": [
+    "closing-started",
+    "proposal-opening-set",
+    "final-name-vote",
+    "rockefeller-approved",
+    "budget-trimmed",
+    "newell-departure-handled",
+    "final-paragraph-written",
+    "attendees-listed",
+    "trajectory-set",
+    "final-summary-planned",
+    "final-week-paperwork",
+    "thanks-letter-received",
+    "cover-memo-typed",
+    "departures-finished",
+    "dean-debriefed"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "The Hanover summer ends with the Dartmouth proposal filed, the leaves still green, and John McCarthy packing for MIT. Whatever you have built is now carbon copy, memory, and a field that has not yet learned its own name.",
+  "left": {
+    "label": "Say goodbye",
+    "effects": {
+      "team_morale": 3.5
+    },
+    "flags": [
+      "summer-ended"
+    ]
+  },
+  "right": {
+    "label": "Finish typing",
+    "effects": {
+      "symbolic_progress": 4.2
+    },
+    "flags": [
+      "summer-ended"
+    ]
+  }
+}

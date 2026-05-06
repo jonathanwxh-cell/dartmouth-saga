@@ -1,0 +1,39 @@
+{
+  "id": "middle-selfridge-pandemonium",
+  "era": "1956",
+  "weight": 8,
+  "flags_required": [
+    "middle-started"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Oliver Selfridge",
+    "portrait": "selfridge.png",
+    "title": "Lincoln Lab"
+  },
+  "prompt": "Oliver Selfridge arrives from Lincoln Lab and draws Pandemonium on the chalkboard: small demons shouting upward until a pattern becomes a decision. It will run on a 704 eventually, which is the favorite tense of July.",
+  "left": {
+    "label": "Put it in proposal",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "selfridge-pandemonium-shown"
+    ]
+  },
+  "right": {
+    "label": "Ask for running code",
+    "effects": {
+      "symbolic_progress": -4.4,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "selfridge-pandemonium-shown"
+    ]
+  }
+}

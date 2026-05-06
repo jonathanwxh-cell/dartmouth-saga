@@ -1,0 +1,40 @@
+{
+  "id": "opening-funding-balance",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Warren Weaver",
+    "portrait": "weaver.png",
+    "title": "Rockefeller Foundation"
+  },
+  "prompt": "The Rockefeller ledger says $1,200 has gone to stipends and forty dollars to ditto paper. The balance looks thinner than the carbon copy that proves it existed.",
+  "left": {
+    "label": "Cut Selfridge",
+    "effects": {
+      "team_morale": -4.2,
+      "funding": 3.5
+    },
+    "flags": [
+      "funding-reviewed"
+    ]
+  },
+  "right": {
+    "label": "Cut your per diem",
+    "effects": {
+      "funding": -3.2,
+      "team_morale": 3.5,
+      "academic_credibility": 2.4
+    },
+    "flags": [
+      "funding-reviewed"
+    ]
+  }
+}

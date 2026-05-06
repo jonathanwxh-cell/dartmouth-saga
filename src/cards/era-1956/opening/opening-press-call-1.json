@@ -1,0 +1,40 @@
+{
+  "id": "opening-press-call-1",
+  "era": "1956",
+  "weight": 5,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Reporter",
+    "portrait": "reporter-generic.png",
+    "title": "Press"
+  },
+  "prompt": "A Boston Globe reporter calls Dartmouth asking for a quote on \"thinking machines.\" The telephone cord suddenly looks like a fuse.",
+  "left": {
+    "label": "Decline politely",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "press-call-handled"
+    ]
+  },
+  "right": {
+    "label": "Give a quote",
+    "effects": {
+      "public_trust": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "press-call-handled",
+      "press-noticed"
+    ]
+  }
+}

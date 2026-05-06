@@ -1,0 +1,41 @@
+{
+  "id": "middle-logic-theorist-result",
+  "era": "1956",
+  "weight": 10,
+  "flags_required": [
+    "middle-started",
+    "lt-demo-attempted"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Herbert Simon",
+    "portrait": "simon.png",
+    "title": "Carnegie Tech"
+  },
+  "prompt": "The Logic Theorist proves Theorem 2.01 of Principia Mathematica, then 2.45, then a proof shorter than Whitehead and Russell's. Herbert Simon writes \"We have invented a thinking machine\" on the blackboard and leaves just enough chalk dust for doubt.",
+  "left": {
+    "label": "Revise the proposal",
+    "effects": {
+      "symbolic_progress": 5.3,
+      "public_trust": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "lt-demonstrated"
+    ]
+  },
+  "right": {
+    "label": "Keep claims narrow",
+    "effects": {
+      "symbolic_progress": -4.4,
+      "academic_credibility": 4
+    },
+    "flags": [
+      "lt-demonstrated"
+    ]
+  }
+}

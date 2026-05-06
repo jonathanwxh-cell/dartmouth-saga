@@ -1,0 +1,54 @@
+{
+  "id": "middle-end-of-july",
+  "era": "1956",
+  "weight": 12,
+  "flags_required": [
+    "middle-started",
+    "lt-demonstrated",
+    "room-cleaned",
+    "rockefeller-progress-report-sent",
+    "selfridge-pandemonium-shown",
+    "704-outage-handled",
+    "clash-handled",
+    "lisp-note-handled",
+    "wiener-letter-handled",
+    "funding-shortfall-handled",
+    "credit-discussed",
+    "more-session-handled",
+    "mccarthy-focus-set",
+    "late-night-debate-held",
+    "program-list-made"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "End of July: five weeks gone, three to go, the Logic Theorist paper in the typewriter, and eighty-four IBM 704 hours spent. John McCarthy looks at you across Steele Hall and says, \"Now we write it.\"",
+  "left": {
+    "label": "Lead the writing",
+    "effects": {
+      "symbolic_progress": 5.3,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "middle-complete"
+    ]
+  },
+  "right": {
+    "label": "Give McCarthy pen",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "middle-complete"
+    ]
+  }
+}

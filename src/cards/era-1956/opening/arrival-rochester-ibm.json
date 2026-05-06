@@ -1,0 +1,40 @@
+{
+  "id": "arrival-rochester-ibm",
+  "era": "1956",
+  "weight": 10,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Nathaniel Rochester",
+    "portrait": "rochester.png",
+    "title": "IBM"
+  },
+  "prompt": "Nathaniel Rochester comes from IBM Poughkeepsie promising 200 hours on the 704 if the summer produces a published note. In the ledger this is generosity; in the room it is a very large machine clearing its throat.",
+  "left": {
+    "label": "Accept IBM terms",
+    "effects": {
+      "compute": 4.4,
+      "funding": 3.5
+    },
+    "flags": [
+      "rochester-arrived",
+      "ibm-relationship-warm"
+    ]
+  },
+  "right": {
+    "label": "Negotiate terms",
+    "effects": {
+      "academic_credibility": 3.2,
+      "compute": -4.2
+    },
+    "flags": [
+      "rochester-arrived"
+    ]
+  }
+}

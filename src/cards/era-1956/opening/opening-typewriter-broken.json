@@ -1,0 +1,39 @@
+{
+  "id": "opening-typewriter-broken",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Dean's Secretary",
+    "portrait": "dean-secretary.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "The Underwood in Steele Hall has a stuck \"i\" key, which is bad luck for a proposal containing \"intelligence\" every third line. The hardware shop on College Street will fix it for eleven dollars and a look of pity.",
+  "left": {
+    "label": "Pay the repair",
+    "effects": {
+      "team_morale": 3.5,
+      "funding": -3.2
+    },
+    "flags": [
+      "typewriter-settled"
+    ]
+  },
+  "right": {
+    "label": "Use pencil drafts",
+    "effects": {
+      "team_morale": -4.2,
+      "funding": 2.6
+    },
+    "flags": [
+      "typewriter-settled"
+    ]
+  }
+}

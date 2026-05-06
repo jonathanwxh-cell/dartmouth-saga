@@ -1,0 +1,40 @@
+{
+  "id": "middle-mccarthy-lisp-germ",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "middle-started"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "John McCarthy doodles a recursive function definition on the back of a napkin. He says programs should describe themselves, which sounds either like mathematics or a symptom of August arriving early.",
+  "left": {
+    "label": "Have him write it",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "academic_credibility": 2.4,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "lisp-note-handled"
+    ]
+  },
+  "right": {
+    "label": "Keep him focused",
+    "effects": {
+      "team_morale": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "lisp-note-handled"
+    ]
+  }
+}

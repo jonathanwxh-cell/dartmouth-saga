@@ -1,0 +1,41 @@
+{
+  "id": "middle-logic-theorist-demo-1",
+  "era": "1956",
+  "weight": 50,
+  "flags_required": [
+    "middle-started"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Allen Newell",
+    "portrait": "newell.png",
+    "title": "RAND"
+  },
+  "prompt": "Allen Newell sets up the Logic Theorist demonstration through JOHNNIAC while the IBM 704 link stalls. Twenty minutes of tape spin loudly enough to become a philosophical position.",
+  "left": {
+    "label": "Restart clean",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "compute": -3.2
+    },
+    "flags": [
+      "lt-demo-attempted"
+    ],
+    "nextCardId": "middle-logic-theorist-result"
+  },
+  "right": {
+    "label": "Let Newell fix it",
+    "effects": {
+      "symbolic_progress": -4.4,
+      "team_morale": 3.5
+    },
+    "flags": [
+      "lt-demo-attempted"
+    ],
+    "nextCardId": "middle-logic-theorist-result"
+  }
+}

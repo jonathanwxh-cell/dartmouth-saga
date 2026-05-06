@@ -1,0 +1,40 @@
+{
+  "id": "opening-room-assignment",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "proposal-read",
+    "solomonoff-stays"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Oliver Selfridge",
+    "portrait": "selfridge.png",
+    "title": "Lincoln Lab"
+  },
+  "prompt": "Oliver Selfridge wires from Lincoln Lab asking when his Lord Hall bedroom will be ready. There is no bedroom, only Ray Solomonoff, a desk, and the arithmetic of embarrassment.",
+  "left": {
+    "label": "Move Solomonoff",
+    "effects": {
+      "public_trust": 3.5,
+      "team_morale": -4.2
+    },
+    "flags": [
+      "selfridge-room-handled"
+    ]
+  },
+  "right": {
+    "label": "Delay Selfridge",
+    "effects": {
+      "public_trust": -3.2,
+      "team_morale": 3.5
+    },
+    "flags": [
+      "selfridge-room-handled"
+    ]
+  }
+}

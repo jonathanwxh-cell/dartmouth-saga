@@ -1,0 +1,37 @@
+{
+  "id": "closing-the-dean-debrief",
+  "era": "1956",
+  "weight": 5,
+  "flags_required": [
+    "closing-started"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John Kemeny",
+    "portrait": "kemeny.png",
+    "title": "Dartmouth Math"
+  },
+  "prompt": "John Kemeny asks for a final Dartmouth debrief and wants to know whether the summer was worth the college's time. The honest answer has a ten-year maturity date.",
+  "left": {
+    "label": "Argue yes",
+    "effects": {
+      "public_trust": 3.5
+    },
+    "flags": [
+      "dean-debriefed"
+    ]
+  },
+  "right": {
+    "label": "Answer honestly",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "dean-debriefed"
+    ]
+  }
+}

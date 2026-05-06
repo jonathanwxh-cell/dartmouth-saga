@@ -1,0 +1,41 @@
+{
+  "id": "middle-press-noticed-followup",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "middle-started",
+    "press-noticed"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Reporter",
+    "portrait": "reporter-generic.png",
+    "title": "Press"
+  },
+  "prompt": "A second reporter calls, this time from Time, asking to come up to Hanover. The word \"thinking\" has acquired legs and no apparent supervisor.",
+  "left": {
+    "label": "Allow the visit",
+    "effects": {
+      "public_trust": 3.5,
+      "academic_credibility": -3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "time-visit-handled"
+    ]
+  },
+  "right": {
+    "label": "Decline Time",
+    "effects": {
+      "public_trust": -3.2,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "time-visit-handled"
+    ]
+  }
+}

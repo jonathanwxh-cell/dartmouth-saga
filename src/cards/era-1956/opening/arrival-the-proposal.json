@@ -1,0 +1,40 @@
+{
+  "id": "arrival-the-proposal",
+  "era": "1956",
+  "weight": 10,
+  "flags_required": [
+    "arrival-greeted"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "In Steele Hall you read McCarthy, Minsky, Rochester, and Shannon on the August 31, 1955 proposal: two pages, a bold title, and the phrase \"artificial intelligence\" already typed into history. Shannon is on the cover sheet; his signature is not.",
+  "left": {
+    "label": "Mark Shannon wary",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "proposal-read",
+      "shannon-hesitation-noted"
+    ]
+  },
+  "right": {
+    "label": "Trust Shannon signs",
+    "effects": {
+      "public_trust": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "proposal-read",
+      "shannon-engaged"
+    ]
+  }
+}

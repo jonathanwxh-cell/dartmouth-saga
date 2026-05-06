@@ -101,9 +101,15 @@
 }
 
 .quality-strip {
-  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: clamp(0.25rem, 1.5vw, 0.75rem); border-block: 1px solid var(--paper-shadow);
+  display: grid; gap: 0.45rem; border-block: 1px solid var(--paper-shadow);
   padding-block: 0.6rem;
+}
+
+.quality-strip-actions { display: flex; justify-content: flex-end; }
+
+.quality-meter-row {
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(0.25rem, 1.5vw, 0.75rem);
 }
 
 .quality-meter { display: grid; gap: 0.25rem; min-inline-size: 0; color: var(--ink); }
@@ -124,6 +130,17 @@
 .quality-fill {
   display: block; inline-size: var(--meter-value); block-size: 100%;
   border-radius: inherit; background: var(--meter-fill);
+}
+
+.mute-toggle {
+  display: inline-grid; place-items: center; inline-size: 2rem; block-size: 2rem;
+  border: 1px solid var(--paper-shadow); border-radius: 999rem;
+  background: transparent; color: var(--ink); cursor: pointer;
+}
+
+.mute-toggle:hover,
+.mute-toggle:focus-visible {
+  outline: 1px solid var(--accent); outline-offset: 2px;
 }
 
 .card-stage {
@@ -240,7 +257,7 @@
 /* Era token transitions - swaps between [data-era] selectors animate over 600ms. */
 body, .game-shell, .landing-screen, .ending-screen,
 .card-view, .quality-track, .quality-fill,
-.card-action, .primary-action, .choice-hint, .portrait-slot {
+.card-action, .primary-action, .choice-hint, .portrait-slot, .mute-toggle {
   transition:
     background-color 600ms ease,
     color 600ms ease,

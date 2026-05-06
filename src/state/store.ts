@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
+import { audioEngine } from '../audio/audioEngine';
 import { selectNextCard } from '../engine/deck';
 import { checkBoundaryEnd } from '../engine/endings';
 import { loadCards } from '../engine/loadCards';
@@ -27,8 +28,10 @@ interface GameStore extends GameState {
   gameOver: GameOver | null;
   rng: Rng;
   pool: Card[];
+  audioMuted: boolean;
   init: (seed?: number) => void;
   reset: () => void;
+  setAudioMuted: (muted: boolean) => void;
   swipe: (side: SwipeSide) => void;
 }
 
@@ -53,6 +56,7 @@ export const useGameStore = create<GameStore>()(
       gameOver: null,
       rng: createRng(1956),
       pool: [],
+      audioMuted: audioEngine.getMuted(),
       init: (seed = 1956) => {
         const rng = createRng(seed);
         const pool = loadCards();
@@ -62,6 +66,10 @@ export const useGameStore = create<GameStore>()(
       },
       reset: () => {
         get().init();
+      },
+      setAudioMuted: (muted) => {
+        audioEngine.setMuted(muted);
+        set({ audioMuted: audioEngine.getMuted() }, false, 'audio/set-muted');
       },
       swipe: (side) => {
         const { currentCard, gameOver, pool, rng } = get();

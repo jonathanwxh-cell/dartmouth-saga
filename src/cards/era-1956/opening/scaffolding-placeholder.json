@@ -1,0 +1,23 @@
+{
+  "id": "scaffolding-placeholder",
+  "era": "1956",
+  "weight": 1,
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png"
+  },
+  "prompt": "This card is scaffolding. Phase 4b will replace it with the real workshop content.",
+  "left": {
+    "label": "Continue",
+    "effects": {
+      "team_morale": 1
+    }
+  },
+  "right": {
+    "label": "Continue",
+    "effects": {
+      "team_morale": 1
+    }
+  }
+}

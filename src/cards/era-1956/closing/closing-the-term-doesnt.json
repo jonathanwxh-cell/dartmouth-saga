@@ -1,0 +1,39 @@
+{
+  "id": "closing-the-term-doesnt",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "closing-started",
+    "term-automata-studies"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Claude Shannon",
+    "portrait": "shannon.png",
+    "title": "Bell Labs"
+  },
+  "prompt": "The Dartmouth proposal is filed with \"automata studies\" on the cover, while \"artificial intelligence\" survives in the introduction like a witness denied the stand. McCarthy will remember the phrase longer than the room does.",
+  "left": {
+    "label": "Note it for later",
+    "effects": {
+      "academic_credibility": 3.2,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "term-survival-noted"
+    ]
+  },
+  "right": {
+    "label": "Lobby Newell",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "term-survival-noted"
+    ]
+  }
+}

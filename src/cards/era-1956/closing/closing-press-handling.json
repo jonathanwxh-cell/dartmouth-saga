@@ -1,0 +1,40 @@
+{
+  "id": "closing-press-handling",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "closing-started",
+    "press-noticed"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Reporter",
+    "portrait": "reporter-generic.png",
+    "title": "Press"
+  },
+  "prompt": "The Time article runs under \"The Thinking Machine,\" and John Kemeny receives calls from two Dartmouth trustees before noon. The headline has learned to reproduce itself.",
+  "left": {
+    "label": "Defend the article",
+    "effects": {
+      "public_trust": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "press-article-handled"
+    ]
+  },
+  "right": {
+    "label": "Distance the work",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": -3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "press-article-handled"
+    ]
+  }
+}

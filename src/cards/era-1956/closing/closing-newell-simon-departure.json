@@ -1,0 +1,38 @@
+{
+  "id": "closing-newell-simon-departure",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "closing-started"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Allen Newell",
+    "portrait": "newell.png",
+    "title": "RAND"
+  },
+  "prompt": "Allen Newell and Herbert Simon fly back to Pittsburgh with the Logic Theorist paper in their luggage. IRE Transactions will get the clean copy; Dartmouth gets the carbon and the envy.",
+  "left": {
+    "label": "Claim Dartmouth",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "newell-departure-handled"
+    ]
+  },
+  "right": {
+    "label": "Let them go",
+    "effects": {
+      "team_morale": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "newell-departure-handled"
+    ]
+  }
+}

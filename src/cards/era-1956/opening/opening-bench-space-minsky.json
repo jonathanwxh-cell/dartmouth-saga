@@ -1,0 +1,41 @@
+{
+  "id": "opening-bench-space-minsky",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "proposal-read",
+    "minsky-allied"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Marvin Minsky",
+    "portrait": "minsky.png",
+    "title": "Princeton"
+  },
+  "prompt": "Marvin Minsky asks to wire a small Snarc-style network on the only clear bench in Steele Hall. It will consume the soldering iron for two days, which is how research announces itself as furniture.",
+  "left": {
+    "label": "Push the schedule",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "compute": -3.2,
+      "team_morale": 2.6
+    },
+    "flags": [
+      "minsky-bench-approved"
+    ]
+  },
+  "right": {
+    "label": "Make him wait",
+    "effects": {
+      "symbolic_progress": -5.9,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "minsky-bench-delayed"
+    ]
+  }
+}

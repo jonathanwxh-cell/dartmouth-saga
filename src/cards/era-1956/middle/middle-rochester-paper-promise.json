@@ -1,0 +1,41 @@
+{
+  "id": "middle-rochester-paper-promise",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "middle-started",
+    "ibm-relationship-warm",
+    "lt-demonstrated"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Nathaniel Rochester",
+    "portrait": "rochester.png",
+    "title": "IBM"
+  },
+  "prompt": "Nathaniel Rochester reminds you that IBM's 704 hours came with a paper-shaped condition. He asks what is being prepared, and the magnetic tapes seem to listen.",
+  "left": {
+    "label": "Promise Theorist",
+    "effects": {
+      "compute": 3.5,
+      "public_trust": 3.5
+    },
+    "flags": [
+      "rochester-paper-plan"
+    ]
+  },
+  "right": {
+    "label": "Promise smaller work",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "rochester-paper-plan"
+    ]
+  }
+}

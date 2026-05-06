@@ -1,0 +1,40 @@
+{
+  "id": "closing-minsky-snarc-publication",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "closing-started",
+    "minsky-allied"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Marvin Minsky",
+    "portrait": "minsky.png",
+    "title": "Princeton"
+  },
+  "prompt": "Marvin Minsky asks whether Snarc will be cited in the Dartmouth proposal. He has already drafted a separate paper for the Proceedings of the IRE, because parallel publication is how ambition keeps warm.",
+  "left": {
+    "label": "Cite Snarc high",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "team_morale": 2.6,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "minsky-snarc-cited"
+    ]
+  },
+  "right": {
+    "label": "Footnote Snarc",
+    "effects": {
+      "team_morale": -3.2,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "minsky-snarc-cited"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "arrival-shannon-cabin",
+  "era": "1956",
+  "weight": 12,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Claude Shannon",
+    "portrait": "shannon.png",
+    "title": "Bell Labs"
+  },
+  "prompt": "Claude Shannon arrives with Betty Shannon and asks for the quiet room, not the clever one. He reminds you that Dartmouth already heard his Boolean circuit theory in 1948 and remarks that lightning seldom accepts a second invitation.",
+  "left": {
+    "label": "Give the quiet room",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": 2.6
+    },
+    "flags": [
+      "shannon-arrived"
+    ]
+  },
+  "right": {
+    "label": "Seat him at dinner",
+    "effects": {
+      "team_morale": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "shannon-arrived"
+    ]
+  }
+}

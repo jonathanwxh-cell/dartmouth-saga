@@ -1,0 +1,43 @@
+{
+  "id": "closing-proposal-opening-paragraph",
+  "era": "1956",
+  "weight": 100,
+  "flags_required": [
+    "middle-complete"
+  ],
+  "flags_forbidden": [
+    "closing-started",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "The first paragraph of the Dartmouth proposal waits under John McCarthy's sentence: \"Every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.\" The paper does not tremble, which is more than can be said for the room.",
+  "left": {
+    "label": "Keep the sentence",
+    "effects": {
+      "symbolic_progress": 5.3,
+      "public_trust": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "closing-started",
+      "proposal-opening-set"
+    ]
+  },
+  "right": {
+    "label": "Write many aspects",
+    "effects": {
+      "academic_credibility": 4,
+      "symbolic_progress": -4.4,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "closing-started",
+      "proposal-opening-set"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "opening-minsky-coffee",
+  "era": "1956",
+  "weight": 7,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Marvin Minsky",
+    "portrait": "minsky.png",
+    "title": "Princeton"
+  },
+  "prompt": "Over coffee Marvin Minsky asks if you have read McCulloch and Pitts from 1943. He wants to abandon logical neurons for stochastic ones, which sounds less like a method than a temperament.",
+  "left": {
+    "label": "Argue with Minsky",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "minsky-coffee-held",
+      "minsky-allied"
+    ]
+  },
+  "right": {
+    "label": "Favor symbols",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "minsky-coffee-held",
+      "minsky-cooled"
+    ]
+  }
+}

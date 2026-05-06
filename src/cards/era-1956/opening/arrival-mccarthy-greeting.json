@@ -1,0 +1,37 @@
+{
+  "id": "arrival-mccarthy-greeting",
+  "era": "1956",
+  "weight": 100,
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "John McCarthy meets you at the Hanover bus station with a Rockefeller proposal carbon copy under one arm and a list of Lord Hall bedrooms under the other. \"You will keep this from collapsing under its own weight,\" he says, as if weight were already a theorem.",
+  "left": {
+    "label": "Handle logistics",
+    "effects": {
+      "team_morale": 3.5,
+      "academic_credibility": 2.4
+    },
+    "flags": [
+      "arrival-greeted"
+    ],
+    "nextCardId": "arrival-the-proposal"
+  },
+  "right": {
+    "label": "Ask the goal",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "arrival-greeted"
+    ],
+    "nextCardId": "arrival-the-proposal"
+  }
+}

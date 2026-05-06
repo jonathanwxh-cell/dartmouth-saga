@@ -1,0 +1,37 @@
+{
+  "id": "closing-departures-final",
+  "era": "1956",
+  "weight": 4,
+  "flags_required": [
+    "closing-started"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Nathaniel Rochester",
+    "portrait": "rochester.png",
+    "title": "IBM"
+  },
+  "prompt": "The last participants leave on August 17, and the IBM 704 link will close at the end of the month. You drive Nathaniel Rochester to the train station through a Hanover afternoon too pleasant for accounting.",
+  "left": {
+    "label": "Ride quietly",
+    "effects": {
+      "team_morale": 2.6
+    },
+    "flags": [
+      "departures-finished"
+    ]
+  },
+  "right": {
+    "label": "Debrief Rochester",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "departures-finished"
+    ]
+  }
+}

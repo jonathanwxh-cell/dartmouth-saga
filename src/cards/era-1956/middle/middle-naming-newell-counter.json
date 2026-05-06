@@ -1,0 +1,42 @@
+{
+  "id": "middle-naming-newell-counter",
+  "era": "1956",
+  "weight": 9,
+  "flags_required": [
+    "middle-started",
+    "lt-demonstrated"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Allen Newell",
+    "portrait": "newell.png",
+    "title": "RAND"
+  },
+  "prompt": "Allen Newell objects to \"artificial intelligence\" and writes \"complex information processing\" on a yellow pad. Herbert Simon nods, which somehow gives the phrase a committee.",
+  "left": {
+    "label": "Defend AI",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "academic_credibility": -3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "newell-name-countered"
+    ]
+  },
+  "right": {
+    "label": "Keep both phrases",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": 2.6,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "newell-name-countered"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "opening-cybernetics-shadow",
+  "era": "1956",
+  "weight": 8,
+  "flags_required": [
+    "proposal-read",
+    "naming-debate-held"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Claude Shannon",
+    "portrait": "shannon.png",
+    "title": "Bell Labs"
+  },
+  "prompt": "The Macy Conferences ended in 1953, but Norbert Wiener's Cybernetics still sits on every desk like an unpaid bill. Someone asks, in the way rooms ask dangerous things, why Wiener is not invited to Dartmouth.",
+  "left": {
+    "label": "Name a new field",
+    "effects": {
+      "academic_credibility": 2.4,
+      "public_trust": -2.1
+    },
+    "flags": [
+      "cybernetics-addressed"
+    ]
+  },
+  "right": {
+    "label": "Write Wiener",
+    "effects": {
+      "public_trust": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "cybernetics-addressed"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "middle-shannon-skeptic",
+  "era": "1956",
+  "weight": 7,
+  "flags_required": [
+    "middle-started",
+    "shannon-engaged"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Claude Shannon",
+    "portrait": "shannon.png",
+    "title": "Bell Labs"
+  },
+  "prompt": "Claude Shannon asks privately whether you actually believe machines will reason. \"Or are we writing what the Foundation wants to read?\" he asks, with Bell Labs patience and none of its mercy.",
+  "left": {
+    "label": "Say you believe",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "shannon-belief-discussed"
+    ]
+  },
+  "right": {
+    "label": "Say proposal first",
+    "effects": {
+      "public_trust": 3.5,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "shannon-belief-discussed"
+    ]
+  }
+}

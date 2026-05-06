@@ -1,0 +1,40 @@
+{
+  "id": "arrival-solomonoff-knock",
+  "era": "1956",
+  "weight": 8,
+  "flags_required": [
+    "proposal-read"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Ray Solomonoff",
+    "portrait": "solomonoff.png",
+    "title": "Dartmouth workshop"
+  },
+  "prompt": "Ray Solomonoff arrives without being scheduled, carrying pages on inductive inference and the expression of a man who has already decided probability is larger than the room. He can stay all eight weeks if there is one desk no one important has claimed.",
+  "left": {
+    "label": "Find him a desk",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "funding": -3.2
+    },
+    "flags": [
+      "solomonoff-invitation-handled",
+      "solomonoff-stays"
+    ]
+  },
+  "right": {
+    "label": "Keep desks full",
+    "effects": {
+      "symbolic_progress": -4.4,
+      "funding": 3.5
+    },
+    "flags": [
+      "solomonoff-invitation-handled"
+    ]
+  }
+}

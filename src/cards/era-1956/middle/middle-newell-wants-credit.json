@@ -1,0 +1,40 @@
+{
+  "id": "middle-newell-wants-credit",
+  "era": "1956",
+  "weight": 7,
+  "flags_required": [
+    "middle-started",
+    "lt-demonstrated"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Allen Newell",
+    "portrait": "newell.png",
+    "title": "RAND"
+  },
+  "prompt": "Allen Newell asks that any Logic Theorist paper list him and Herbert Simon first. John McCarthy says nothing, which is how founders often begin a dispute.",
+  "left": {
+    "label": "Side with Newell",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "credit-discussed"
+    ]
+  },
+  "right": {
+    "label": "Share first credit",
+    "effects": {
+      "team_morale": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "credit-discussed"
+    ]
+  }
+}

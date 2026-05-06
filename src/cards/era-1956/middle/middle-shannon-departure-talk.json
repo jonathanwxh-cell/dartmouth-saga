@@ -1,0 +1,40 @@
+{
+  "id": "middle-shannon-departure-talk",
+  "era": "1956",
+  "weight": 7,
+  "flags_required": [
+    "middle-started",
+    "shannon-engaged"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Claude Shannon",
+    "portrait": "shannon.png",
+    "title": "Bell Labs"
+  },
+  "prompt": "Claude Shannon says he is leaving August 1 because Bell Labs needs him. He gives the date the way engineers give tolerances: exact, impersonal, and not improved by pleading.",
+  "left": {
+    "label": "Ask one more week",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "shannon-departure-planned"
+    ]
+  },
+  "right": {
+    "label": "Plan around him",
+    "effects": {
+      "team_morale": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "shannon-departure-planned"
+    ]
+  }
+}

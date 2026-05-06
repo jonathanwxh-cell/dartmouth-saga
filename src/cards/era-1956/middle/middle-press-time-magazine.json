@@ -1,0 +1,40 @@
+{
+  "id": "middle-press-time-magazine",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "middle-started",
+    "press-noticed"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Reporter",
+    "portrait": "reporter-generic.png",
+    "title": "Press"
+  },
+  "prompt": "Time sends a photographer who wants Marvin Minsky beside the IBM 704. Minsky says, correctly and unhelpfully, that it is not even Dartmouth's machine.",
+  "left": {
+    "label": "Stage the photo",
+    "effects": {
+      "public_trust": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "time-photo-handled"
+    ]
+  },
+  "right": {
+    "label": "Decline the photo",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "time-photo-handled"
+    ]
+  }
+}

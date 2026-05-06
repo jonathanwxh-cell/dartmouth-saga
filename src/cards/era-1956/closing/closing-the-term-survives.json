@@ -1,0 +1,39 @@
+{
+  "id": "closing-the-term-survives",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "closing-started",
+    "term-ai-defended"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "The Dartmouth proposal is filed with \"artificial intelligence\" on the cover. The term will show up in NSF grant applications for sixty years, which is a long afterlife for two typed words.",
+  "left": {
+    "label": "Take quiet credit",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": 3.5
+    },
+    "flags": [
+      "term-survival-noted"
+    ]
+  },
+  "right": {
+    "label": "Stay anonymous",
+    "effects": {
+      "public_trust": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "term-survival-noted"
+    ]
+  }
+}

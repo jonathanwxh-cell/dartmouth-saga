@@ -1,0 +1,41 @@
+{
+  "id": "opening-shannon-cover-sheet",
+  "era": "1956",
+  "weight": 8,
+  "flags_required": [
+    "proposal-read",
+    "shannon-engaged"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Claude Shannon",
+    "portrait": "shannon.png",
+    "title": "Bell Labs"
+  },
+  "prompt": "Claude Shannon agrees to place his name on the final cover sheet, and only the cover sheet. It is a signature-shaped fence, but a fence with Bell Labs on it.",
+  "left": {
+    "label": "Take the cover",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": 3.5
+    },
+    "flags": [
+      "shannon-cover-secured"
+    ]
+  },
+  "right": {
+    "label": "Ask full signing",
+    "effects": {
+      "academic_credibility": -4.2,
+      "team_morale": -3.2,
+      "public_trust": 3.5
+    },
+    "flags": [
+      "shannon-cover-secured"
+    ]
+  }
+}

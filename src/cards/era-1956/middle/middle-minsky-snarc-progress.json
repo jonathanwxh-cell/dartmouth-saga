@@ -1,0 +1,42 @@
+{
+  "id": "middle-minsky-snarc-progress",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "middle-started",
+    "minsky-allied"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Marvin Minsky",
+    "portrait": "minsky.png",
+    "title": "Princeton"
+  },
+  "prompt": "Marvin Minsky's bench network is half wired and wholly persuasive. Six more 6L6 tubes from Allied Radio cost four dollars and twenty cents, an amount small enough to make refusal look philosophical.",
+  "left": {
+    "label": "Approve tubes",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "funding": -3.2,
+      "team_morale": 2.6
+    },
+    "flags": [
+      "minsky-tubes-handled"
+    ]
+  },
+  "right": {
+    "label": "Defer the tubes",
+    "effects": {
+      "symbolic_progress": -5.9,
+      "funding": 2.6,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "minsky-tubes-handled"
+    ]
+  }
+}

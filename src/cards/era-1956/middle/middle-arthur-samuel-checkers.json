@@ -1,0 +1,40 @@
+{
+  "id": "middle-arthur-samuel-checkers",
+  "era": "1956",
+  "weight": 8,
+  "flags_required": [
+    "middle-started",
+    "ibm-relationship-warm"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Arthur Samuel",
+    "portrait": "samuel.png",
+    "title": "IBM"
+  },
+  "prompt": "Arthur Samuel arrives from IBM with a checkers program that can play a midgame and learn from its mistakes. The machine is already more reflective than the budget committee.",
+  "left": {
+    "label": "Show the room",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "public_trust": 3.5
+    },
+    "flags": [
+      "samuel-checkers-shown"
+    ]
+  },
+  "right": {
+    "label": "Keep it closed",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "samuel-checkers-shown"
+    ]
+  }
+}

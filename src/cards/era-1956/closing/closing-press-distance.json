@@ -1,0 +1,39 @@
+{
+  "id": "closing-press-distance",
+  "era": "1956",
+  "weight": 5,
+  "flags_required": [
+    "closing-started",
+    "press-noticed"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Reporter",
+    "portrait": "reporter-generic.png",
+    "title": "Press"
+  },
+  "prompt": "The Time photographer's pictures run, and Marvin Minsky looks foolish beside the IBM 704. He blames the workshop, which is unfair in the precise way publicity usually is.",
+  "left": {
+    "label": "Apologize publicly",
+    "effects": {
+      "team_morale": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "press-distance-handled"
+    ]
+  },
+  "right": {
+    "label": "Tell him plainly",
+    "effects": {
+      "team_morale": -3.2,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "press-distance-handled"
+    ]
+  }
+}

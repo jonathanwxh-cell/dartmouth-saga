@@ -1,0 +1,39 @@
+{
+  "id": "closing-the-list-of-attendees",
+  "era": "1956",
+  "weight": 7,
+  "flags_required": [
+    "closing-started"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Dean's Secretary",
+    "portrait": "dean-secretary.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "The attendee list for Dartmouth has to decide who counts: eight-week residents, two-day visitors, and men who contributed mainly smoke. The historical record, like the rooming list, has no spare columns.",
+  "left": {
+    "label": "List everyone",
+    "effects": {
+      "public_trust": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "attendees-listed"
+    ]
+  },
+  "right": {
+    "label": "List contributors",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": -3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "attendees-listed"
+    ]
+  }
+}

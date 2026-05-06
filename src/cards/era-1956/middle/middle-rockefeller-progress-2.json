@@ -1,0 +1,41 @@
+{
+  "id": "middle-rockefeller-progress-2",
+  "era": "1956",
+  "weight": 7,
+  "flags_required": [
+    "middle-started",
+    "rockefeller-progress-report-sent"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Warren Weaver",
+    "portrait": "weaver.png",
+    "title": "Rockefeller Foundation"
+  },
+  "prompt": "Warren Weaver appreciates the progress note and asks whether a published paper will appear before Rockefeller's December grant cycle. The calendar has become another reviewer.",
+  "left": {
+    "label": "Promise yes",
+    "effects": {
+      "public_trust": 3.5,
+      "funding": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "rockefeller-paper-answer"
+    ]
+  },
+  "right": {
+    "label": "Promise to try",
+    "effects": {
+      "academic_credibility": 3.2,
+      "funding": -3.2
+    },
+    "flags": [
+      "rockefeller-paper-answer"
+    ]
+  }
+}

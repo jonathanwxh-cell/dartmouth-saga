@@ -1,0 +1,40 @@
+{
+  "id": "closing-rochester-paper-due",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "closing-started",
+    "ibm-relationship-warm",
+    "lt-demonstrated"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Nathaniel Rochester",
+    "portrait": "rochester.png",
+    "title": "IBM"
+  },
+  "prompt": "Nathaniel Rochester's promised IBM paper is due, and he wants the Logic Theorist write-up. The 704 hours were never free; they were merely polite.",
+  "left": {
+    "label": "Send Theorist",
+    "effects": {
+      "compute": 3.5,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "rochester-paper-sent"
+    ]
+  },
+  "right": {
+    "label": "Send smaller paper",
+    "effects": {
+      "compute": -3.2,
+      "symbolic_progress": 4.2
+    },
+    "flags": [
+      "rochester-paper-sent"
+    ]
+  }
+}

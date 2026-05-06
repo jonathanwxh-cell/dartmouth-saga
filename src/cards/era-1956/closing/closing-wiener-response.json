@@ -1,0 +1,39 @@
+{
+  "id": "closing-wiener-response",
+  "era": "1956",
+  "weight": 7,
+  "flags_required": [
+    "closing-started",
+    "wiener-letter-circulated"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "John McCarthy drafts a reply to Norbert Wiener, measured by ordinary standards and sharp by Rockefeller standards. He asks you to read it before the envelope becomes irreversible.",
+  "left": {
+    "label": "Soften the reply",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "wiener-response-sent"
+    ]
+  },
+  "right": {
+    "label": "Send it as written",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "wiener-response-sent"
+    ]
+  }
+}

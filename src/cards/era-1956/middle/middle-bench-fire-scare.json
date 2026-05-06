@@ -1,0 +1,41 @@
+{
+  "id": "middle-bench-fire-scare",
+  "era": "1956",
+  "weight": 4,
+  "flags_required": [
+    "middle-started",
+    "minsky-allied"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Marvin Minsky",
+    "portrait": "minsky.png",
+    "title": "Princeton"
+  },
+  "prompt": "A capacitor pops on Marvin Minsky's bench; no fire follows, only smoke and a call from the Dartmouth dean's office. Snarc has discovered public administration.",
+  "left": {
+    "label": "Cover for Minsky",
+    "effects": {
+      "team_morale": 3.5,
+      "academic_credibility": -3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "bench-fire-handled"
+    ]
+  },
+  "right": {
+    "label": "Tell the truth",
+    "effects": {
+      "team_morale": -3.2,
+      "academic_credibility": 3.2
+    },
+    "flags": [
+      "bench-fire-handled"
+    ]
+  }
+}

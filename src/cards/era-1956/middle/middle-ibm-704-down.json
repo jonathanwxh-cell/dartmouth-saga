@@ -1,0 +1,39 @@
+{
+  "id": "middle-ibm-704-down",
+  "era": "1956",
+  "weight": 5,
+  "flags_required": [
+    "middle-started"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Nathaniel Rochester",
+    "portrait": "rochester.png",
+    "title": "IBM"
+  },
+  "prompt": "The IBM 704 link goes down for two days while Nathaniel Rochester is back in Poughkeepsie. The engineer blames a tape drive belt, which is as close as the machine comes to literary symbolism.",
+  "left": {
+    "label": "Wire Rochester",
+    "effects": {
+      "compute": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "704-outage-handled"
+    ]
+  },
+  "right": {
+    "label": "Write instead",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "compute": -3.2
+    },
+    "flags": [
+      "704-outage-handled"
+    ]
+  }
+}

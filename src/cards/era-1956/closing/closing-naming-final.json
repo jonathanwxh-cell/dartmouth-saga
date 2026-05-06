@@ -1,0 +1,42 @@
+{
+  "id": "closing-naming-final",
+  "era": "1956",
+  "weight": 50,
+  "flags_required": [
+    "closing-started",
+    "naming-position-set"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "The final naming vote gathers McCarthy, Shannon, Newell, and Simon around one table. \"Artificial intelligence,\" \"automata studies,\" and \"complex information processing\" sit there like three applicants for one stipend.",
+  "left": {
+    "label": "Vote for AI",
+    "effects": {
+      "symbolic_progress": 5.3,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "final-name-vote",
+      "final-term-ai"
+    ]
+  },
+  "right": {
+    "label": "Vote against AI",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "final-name-vote",
+      "final-term-not-ai"
+    ]
+  }
+}

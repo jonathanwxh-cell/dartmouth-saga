@@ -1,0 +1,39 @@
+{
+  "id": "middle-funding-shortfall",
+  "era": "1956",
+  "weight": 8,
+  "flags_required": [
+    "middle-started"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Warren Weaver",
+    "portrait": "weaver.png",
+    "title": "Rockefeller Foundation"
+  },
+  "prompt": "The grant accounting says Dartmouth will be three thousand dollars short if Rockefeller funds at the likely level rather than the requested $13,500. Arithmetic, unlike optimism, arrives balanced.",
+  "left": {
+    "label": "Cut compute hours",
+    "effects": {
+      "compute": -4.2,
+      "funding": 3.5
+    },
+    "flags": [
+      "funding-shortfall-handled"
+    ]
+  },
+  "right": {
+    "label": "Cut travel money",
+    "effects": {
+      "team_morale": -4.2,
+      "funding": 3.5
+    },
+    "flags": [
+      "funding-shortfall-handled"
+    ]
+  }
+}

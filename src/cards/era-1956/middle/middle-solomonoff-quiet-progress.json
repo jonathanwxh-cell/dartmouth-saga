@@ -1,0 +1,41 @@
+{
+  "id": "middle-solomonoff-quiet-progress",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "middle-started",
+    "solomonoff-stays"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Ray Solomonoff",
+    "portrait": "solomonoff.png",
+    "title": "Dartmouth workshop"
+  },
+  "prompt": "At midnight you find Ray Solomonoff calculating probabilities of program length. \"Inductive inference is a probability over programs,\" he says, and the sentence refuses to become smaller.",
+  "left": {
+    "label": "Give two weeks",
+    "effects": {
+      "symbolic_progress": 4.2,
+      "academic_credibility": 3.2,
+      "funding": -3.2
+    },
+    "flags": [
+      "solomonoff-midnight-handled"
+    ]
+  },
+  "right": {
+    "label": "Ask for a note",
+    "effects": {
+      "team_morale": 3.5,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "solomonoff-midnight-handled"
+    ]
+  }
+}

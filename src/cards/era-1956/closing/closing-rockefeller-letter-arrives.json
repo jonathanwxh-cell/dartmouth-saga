@@ -1,0 +1,41 @@
+{
+  "id": "closing-rockefeller-letter-arrives",
+  "era": "1956",
+  "weight": 100,
+  "flags_required": [
+    "closing-started"
+  ],
+  "flags_forbidden": [
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Warren Weaver",
+    "portrait": "weaver.png",
+    "title": "Rockefeller Foundation"
+  },
+  "prompt": "A letter from Warren Weaver arrives on Rockefeller Foundation letterhead. The grant is approved at $7,500, not the requested $13,500, which is a yes wearing a smaller hat.",
+  "left": {
+    "label": "Trim the budget",
+    "effects": {
+      "funding": 4.4,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "rockefeller-approved"
+    ],
+    "nextCardId": "closing-trim-the-budget"
+  },
+  "right": {
+    "label": "Ask for more",
+    "effects": {
+      "funding": -4.2,
+      "academic_credibility": 3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "rockefeller-approved"
+    ],
+    "nextCardId": "closing-trim-the-budget"
+  }
+}

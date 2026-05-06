@@ -1,0 +1,42 @@
+{
+  "id": "opening-rochester-ibm-pressure",
+  "era": "1956",
+  "weight": 7,
+  "flags_required": [
+    "proposal-read",
+    "ibm-relationship-warm"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Nathaniel Rochester",
+    "portrait": "rochester.png",
+    "title": "IBM"
+  },
+  "prompt": "Nathaniel Rochester says IBM publicity wants a story about \"machines that learn.\" He says this as a man who has seen publicity learn the wrong lesson from a correct fact.",
+  "left": {
+    "label": "Help deflect IBM",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "ibm-pr-handled"
+    ]
+  },
+  "right": {
+    "label": "Let IBM talk",
+    "effects": {
+      "funding": 3.5,
+      "public_trust": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "ibm-pr-handled",
+      "press-noticed"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "middle-minsky-leaves-early-rumor",
+  "era": "1956",
+  "weight": 5,
+  "flags_required": [
+    "middle-started",
+    "minsky-cooled"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Marvin Minsky",
+    "portrait": "minsky.png",
+    "title": "Princeton"
+  },
+  "prompt": "A rumor spreads that Marvin Minsky may leave Hanover a week early. The Dartmouth proposal needs his name, which is now behaving like a scarce machine part.",
+  "left": {
+    "label": "Convince him",
+    "effects": {
+      "academic_credibility": 3.2,
+      "team_morale": -3.2
+    },
+    "flags": [
+      "minsky-rumor-handled"
+    ]
+  },
+  "right": {
+    "label": "Reframe without him",
+    "effects": {
+      "academic_credibility": -3.2,
+      "symbolic_progress": 4.2,
+      "team_morale": 2.6
+    },
+    "flags": [
+      "minsky-rumor-handled"
+    ]
+  }
+}

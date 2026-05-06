@@ -1,0 +1,40 @@
+{
+  "id": "middle-program-list",
+  "era": "1956",
+  "weight": 6,
+  "flags_required": [
+    "middle-started",
+    "lt-demonstrated"
+  ],
+  "flags_forbidden": [
+    "middle-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "John McCarthy",
+    "portrait": "mccarthy.png",
+    "title": "Dartmouth"
+  },
+  "prompt": "Someone asks for a list of running programs: Logic Theorist, Arthur Samuel's checkers if you showed it, and a small matching program by John McCarthy. Three items look lonely on Dartmouth letterhead.",
+  "left": {
+    "label": "Inflate the list",
+    "effects": {
+      "public_trust": 3.5,
+      "academic_credibility": -3.2
+    },
+    "flags": [
+      "program-list-made"
+    ]
+  },
+  "right": {
+    "label": "Keep it honest",
+    "effects": {
+      "academic_credibility": 3.2,
+      "public_trust": -3.2
+    },
+    "flags": [
+      "program-list-made"
+    ]
+  }
+}

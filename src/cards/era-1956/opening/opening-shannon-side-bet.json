@@ -1,0 +1,41 @@
+{
+  "id": "opening-shannon-side-bet",
+  "era": "1956",
+  "weight": 7,
+  "flags_required": [
+    "proposal-read",
+    "shannon-engaged"
+  ],
+  "flags_forbidden": [
+    "opening-complete",
+    "summer-ended"
+  ],
+  "one_shot": true,
+  "speaker": {
+    "name": "Claude Shannon",
+    "portrait": "shannon.png",
+    "title": "Bell Labs"
+  },
+  "prompt": "Claude Shannon mentions Theseus, his maze-running mouse, with more affection than he gives the word \"thinking.\" He wonders aloud whether intelligence is an objective or just a handsome label on a grant folder.",
+  "left": {
+    "label": "Validate the doubt",
+    "effects": {
+      "academic_credibility": 3.2,
+      "symbolic_progress": -4.4
+    },
+    "flags": [
+      "shannon-doubt-handled"
+    ]
+  },
+  "right": {
+    "label": "Push the claim",
+    "effects": {
+      "academic_credibility": -3.2,
+      "symbolic_progress": 4.2,
+      "team_morale": -2.1
+    },
+    "flags": [
+      "shannon-doubt-handled"
+    ]
+  }
+}

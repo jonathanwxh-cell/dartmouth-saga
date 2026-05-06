@@ -159,7 +159,7 @@
 
 .swipe-card {
   cursor: grab;
-  touch-action: pan-y;
+  touch-action: none;
 }
 
 .swipe-card:active {

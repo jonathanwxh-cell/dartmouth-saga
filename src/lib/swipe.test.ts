@@ -1,9 +1,9 @@
 import { commitThreshold, swipeSideFromDelta } from './swipe';
 
 describe('swipe helpers', () => {
-  it('commitThreshold returns ~35% of viewport width', () => {
-    expect(commitThreshold(1000)).toBe(350);
-    expect(commitThreshold(375)).toBeCloseTo(131.25);
+  it('commitThreshold returns 28% of viewport width with a 90px floor', () => {
+    expect(commitThreshold(1000)).toBe(280);
+    expect(commitThreshold(375)).toBeCloseTo(105);
   });
 
   it("swipeSideFromDelta returns 'left' for delta below -threshold, 'right' for above +threshold, null otherwise", () => {

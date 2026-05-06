@@ -65,6 +65,8 @@ function CardStack() {
           <motion.div
             className="swipe-card"
             drag="x"
+            dragDirectionLock
+            dragElastic={0.18}
             onDragEnd={(_, info) => {
               const side = swipeSideFromDelta(info.offset.x, threshold);
               if (side) void commit(side);

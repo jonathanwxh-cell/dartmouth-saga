@@ -1,0 +1,23 @@
+import CardStack from './CardStack';
+import EndingScreen from './EndingScreen';
+import Landing from './Landing';
+import QualityMeters from './QualityMeters';
+import { useGameStore } from '../state/store';
+
+function Game() {
+  const currentCard = useGameStore((state) => state.currentCard);
+  const gameOver = useGameStore((state) => state.gameOver);
+  const qualities = useGameStore((state) => state.qualities);
+
+  if (gameOver) return <EndingScreen />;
+  if (!currentCard) return <Landing />;
+
+  return (
+    <main className="game-shell" aria-label="The Dartmouth Saga">
+      <QualityMeters qualities={qualities} />
+      <CardStack />
+    </main>
+  );
+}
+
+export default Game;

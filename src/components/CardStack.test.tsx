@@ -56,4 +56,31 @@ describe('CardStack', () => {
 
     expect(swipe).not.toHaveBeenCalled();
   });
+
+  it("clicking the left arrow button invokes swipe('left')", async () => {
+    const { swipe } = arrangeStore();
+
+    render(<CardStack />);
+    fireEvent.click(screen.getByRole('button', { name: /conserve/i }));
+
+    await waitFor(() => expect(swipe).toHaveBeenCalledWith('left'));
+  });
+
+  it("clicking the right arrow button invokes swipe('right')", async () => {
+    const { swipe } = arrangeStore();
+
+    render(<CardStack />);
+    fireEvent.click(screen.getByRole('button', { name: /commit/i }));
+
+    await waitFor(() => expect(swipe).toHaveBeenCalledWith('right'));
+  });
+
+  it('arrow buttons are disabled when gameOver is set', () => {
+    arrangeStore({ gameOver: { reason: 'pool-exhausted' } });
+
+    render(<CardStack />);
+
+    expect(screen.getByRole('button', { name: /conserve/i })).toBeDisabled();
+    expect(screen.getByRole('button', { name: /commit/i })).toBeDisabled();
+  });
 });

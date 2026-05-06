@@ -1,211 +1,165 @@
 @theme {
-  --paper: #f5f1e8;
-  --ink: #1a1a1a;
-  --ink-muted: #5f574c;
-  --accent: #6f4d2f;
-  --meter-fill: #1a1a1a;
-  --meter-track: #ded6c7;
-  --card-bg: #fffaf0;
-  --card-shadow: 0 1.25rem 3rem rgb(26 26 26 / 18%);
-  --font-display: Georgia, 'Times New Roman', Times, serif;
-  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    sans-serif;
+  --paper: #f1ebd9; --paper-shadow: #e6dec8; --ink: #1c1611; --ink-muted: #6f5e44;
+  --accent: #00693e; --accent-soft: #2c7a55; --sepia: #8a6a3b;
+  --meter-fill: #1c1611; --meter-track: #d8cdb0; --card-bg: #faf3df;
+  --card-border: #c9b98a; --card-shadow: 0 1.5rem 3.5rem rgb(28 22 17 / 14%);
+  --font-display: 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
+  --font-body: 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
-
 :root {
-  --paper: #f5f1e8;
-  --ink: #1a1a1a;
-  --ink-muted: #5f574c;
-  --accent: #6f4d2f;
-  --meter-fill: #1a1a1a;
-  --meter-track: #ded6c7;
-  --card-bg: #fffaf0;
-  --card-shadow: 0 1.25rem 3rem rgb(26 26 26 / 18%);
+  --paper: #f5f1e8; --paper-shadow: #e6dec8; --ink: #1a1a1a; --ink-muted: #5f574c;
+  --accent: #6f4d2f; --accent-soft: #8a6848; --sepia: #8a6a3b;
+  --meter-fill: #1a1a1a; --meter-track: #ded6c7; --card-bg: #fffaf0;
+  --card-border: #ded6c7; --card-shadow: 0 1.25rem 3rem rgb(26 26 26 / 18%);
   --font-display: Georgia, 'Times New Roman', Times, serif;
-  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    sans-serif;
+  --font-body: Georgia, 'Times New Roman', Times, serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
-
+[data-era="1956"] {
+  --paper: #f1ebd9; --paper-shadow: #e6dec8; --ink: #1c1611; --ink-muted: #6f5e44;
+  --accent: #00693e; --accent-soft: #2c7a55; --sepia: #8a6a3b;
+  --meter-fill: #1c1611; --meter-track: #d8cdb0; --card-bg: #faf3df;
+  --card-border: #c9b98a; --card-shadow: 0 1.5rem 3.5rem rgb(28 22 17 / 14%);
+  --font-display: 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
+  --font-body: 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+[data-era="1974"], [data-era="1980"], [data-era="1987"],
+[data-era="1993"], [data-era="2012"], [data-era="2020"] {
+  /* P-future fills per-era values; for v0.1 these inherit 1956. */
+  --paper: #f1ebd9; --paper-shadow: #e6dec8; --ink: #1c1611; --ink-muted: #6f5e44;
+  --accent: #00693e; --accent-soft: #2c7a55; --sepia: #8a6a3b;
+  --meter-fill: #1c1611; --meter-track: #d8cdb0; --card-bg: #faf3df;
+  --card-border: #c9b98a; --card-shadow: 0 1.5rem 3.5rem rgb(28 22 17 / 14%);
+  --font-display: 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
+  --font-body: 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
 .landing-screen,
 .ending-screen,
 .game-shell {
-  box-sizing: border-box;
-  min-block-size: 100svh;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-body);
+  box-sizing: border-box; min-block-size: 100svh; background: var(--paper);
+  color: var(--ink); font-family: var(--font-body);
 }
 
 .landing-screen,
 .ending-screen {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  padding: clamp(1.25rem, 5vw, 4rem);
-  text-align: center;
+  display: grid; grid-template-rows: 1fr auto;
+  padding: clamp(1.25rem, 5vw, 4rem); text-align: center;
 }
 
 .landing-panel,
 .ending-panel {
-  align-self: center;
-  justify-self: center;
-  display: grid;
-  gap: clamp(1rem, 3vw, 1.5rem);
-  max-inline-size: 44rem;
+  align-self: center; justify-self: center; display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem); max-inline-size: 44rem;
 }
 
 .landing-panel h1,
 .ending-panel h1 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 13vw, 7rem);
-  font-weight: 700;
-  line-height: 0.95;
+  margin: 0; font-family: var(--font-display);
+  font-size: clamp(3rem, 13vw, 7rem); font-weight: 600; line-height: 0.95;
 }
 
-.ending-panel h1 {
-  font-size: clamp(2.25rem, 10vw, 5.5rem);
-}
+.ending-panel h1 { font-size: clamp(2.25rem, 10vw, 5.5rem); }
 
 .landing-panel p,
 .ending-panel p,
 .landing-screen footer {
-  margin: 0;
-  color: var(--ink-muted);
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  line-height: 1.55;
+  margin: 0; color: var(--ink-muted);
+  font-size: clamp(1rem, 3vw, 1.25rem); line-height: 1.55;
 }
 
 .screen-label {
-  color: var(--accent);
-  font-size: clamp(0.75rem, 2.2vw, 0.9rem);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: var(--accent); font-size: clamp(0.75rem, 2.2vw, 0.9rem);
+  font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+.primary-action,
+.card-action {
+  background: var(--ink); color: var(--paper); cursor: pointer;
+  font-family: var(--font-body); font-weight: 600;
 }
 
 .primary-action {
-  justify-self: center;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  border: 0;
-  border-radius: 999rem;
+  justify-self: center; display: inline-flex; align-items: center;
+  gap: 0.55rem; border: 0; border-radius: 999rem;
   padding: clamp(0.75rem, 2vw, 0.9rem) clamp(1.1rem, 4vw, 1.6rem);
-  background: var(--ink);
-  color: var(--paper);
-  cursor: pointer;
-  font-weight: 700;
+}
+
+.primary-action:hover,
+.primary-action:focus-visible,
+.card-action:hover,
+.card-action:focus-visible {
+  outline: 1px solid var(--accent); outline-offset: 3px;
 }
 
 .game-shell {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  gap: clamp(0.75rem, 3vw, 1.5rem);
-  padding: clamp(0.8rem, 3vw, 1.75rem);
-  padding-block-end: max(
-    clamp(0.8rem, 3vw, 1.75rem),
-    env(safe-area-inset-bottom) + 0.5rem
-  );
-  overflow: hidden;
+  display: grid; grid-template-rows: auto 1fr; gap: clamp(0.75rem, 3vw, 1.5rem);
+  overflow: hidden; padding: clamp(0.8rem, 3vw, 1.75rem);
+  padding-block-end: max(clamp(0.8rem, 3vw, 1.75rem), env(safe-area-inset-bottom) + 0.5rem);
 }
 
 .quality-strip {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: clamp(0.25rem, 1.5vw, 0.75rem);
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(0.25rem, 1.5vw, 0.75rem); border-block: 1px solid var(--paper-shadow);
+  padding-block: 0.6rem;
 }
 
-.quality-meter {
-  display: grid;
-  gap: 0.25rem;
-  min-inline-size: 0;
-  color: var(--ink);
-}
+.quality-meter { display: grid; gap: 0.25rem; min-inline-size: 0; color: var(--ink); }
 
 .quality-label,
 .quality-value {
-  font-size: clamp(0.62rem, 2vw, 0.78rem);
-  font-weight: 700;
-  line-height: 1;
+  font-family: var(--font-mono); font-size: clamp(0.62rem, 2vw, 0.78rem);
+  font-weight: 600; line-height: 1;
 }
 
-.quality-value {
-  color: var(--ink-muted);
-  font-variant-numeric: tabular-nums;
-}
+.quality-value { color: var(--ink-muted); font-variant-numeric: tabular-nums; }
 
 .quality-track {
-  overflow: hidden;
-  block-size: clamp(0.3rem, 1.5vw, 0.5rem);
-  border-radius: 999rem;
-  background: var(--meter-track);
+  overflow: hidden; block-size: clamp(0.3rem, 1.5vw, 0.5rem);
+  border-radius: 999rem; background: var(--meter-track);
 }
 
 .quality-fill {
-  display: block;
-  inline-size: var(--meter-value);
-  block-size: 100%;
-  border-radius: inherit;
-  background: var(--meter-fill);
+  display: block; inline-size: var(--meter-value); block-size: 100%;
+  border-radius: inherit; background: var(--meter-fill);
 }
 
 .card-stage {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  align-items: center;
-  justify-items: center;
-  gap: clamp(0.75rem, 3vw, 1.25rem);
-  min-block-size: 0;
+  display: grid; grid-template-rows: 1fr auto; align-items: center;
+  justify-items: center; gap: clamp(0.75rem, 3vw, 1.25rem); min-block-size: 0;
 }
 
 .swipe-card-shell,
-.swipe-card {
-  inline-size: min(92vw, 28rem);
-  max-inline-size: 100%;
-}
+.swipe-card { inline-size: min(92vw, 28rem); max-inline-size: 100%; }
 
-.swipe-card {
-  cursor: grab;
-  touch-action: none;
-}
-
-.swipe-card:active {
-  cursor: grabbing;
-}
+.swipe-card { cursor: grab; touch-action: none; }
+.swipe-card:active { cursor: grabbing; }
 
 .card-view {
-  position: relative;
-  display: grid;
-  grid-template-rows: auto auto 1fr;
-  gap: clamp(1rem, 3vw, 1.35rem);
-  min-block-size: min(58svh, 36rem);
-  border: 0.08rem solid var(--meter-track);
-  border-radius: clamp(1rem, 4vw, 1.5rem);
-  padding: clamp(1.1rem, 4vw, 1.8rem);
-  background: var(--card-bg);
-  box-shadow: var(--card-shadow);
+  position: relative; display: grid; grid-template-rows: auto auto 1fr;
+  gap: clamp(1rem, 3vw, 1.35rem); min-block-size: min(58svh, 36rem);
+  border: 1px solid var(--card-border); border-radius: clamp(1rem, 4vw, 1.5rem);
+  padding: clamp(1.1rem, 4vw, 1.8rem); background: var(--card-bg); box-shadow: var(--card-shadow);
 }
 
-.card-header {
-  text-align: center;
-}
-
-.card-header h2,
-.speaker-title,
-.card-prompt {
-  margin: 0;
-}
+.card-header { text-align: center; }
+.card-header h2, .speaker-title, .card-prompt { margin: 0; }
 
 .card-header h2 {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 8vw, 3rem);
+  font-weight: 600;
   line-height: 1;
 }
 
 .speaker-title {
   color: var(--ink-muted);
   font-size: clamp(0.75rem, 2.3vw, 0.95rem);
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .portrait-slot {
@@ -215,7 +169,7 @@
   inline-size: min(42vw, 10rem);
   aspect-ratio: 1;
   margin: 0;
-  border: 0.08rem solid var(--meter-track);
+  border: 1px solid var(--sepia);
   border-radius: 999rem;
   color: var(--accent);
   font-family: var(--font-display);
@@ -225,8 +179,10 @@
 .card-prompt {
   align-self: center;
   color: var(--ink);
+  font-family: var(--font-display);
   font-size: clamp(1rem, 4vw, 1.35rem);
-  line-height: 1.55;
+  letter-spacing: 0.005em;
+  line-height: 1.65;
   text-align: center;
 }
 
@@ -236,23 +192,19 @@
   max-inline-size: 8rem;
   border-radius: 999rem;
   padding: 0.5rem 0.75rem;
-  background: var(--ink);
+  background: var(--accent);
   color: var(--paper);
+  font-family: var(--font-mono);
   font-size: clamp(0.75rem, 2.5vw, 0.95rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   text-align: center;
   transform: translateY(-50%);
   pointer-events: none;
 }
 
-.choice-hint--left {
-  left: clamp(0.6rem, 3vw, 1rem);
-}
-
-.choice-hint--right {
-  right: clamp(0.6rem, 3vw, 1rem);
-}
+.choice-hint--left { left: clamp(0.6rem, 3vw, 1rem); }
+.choice-hint--right { right: clamp(0.6rem, 3vw, 1rem); }
 
 .card-actions {
   display: grid;
@@ -269,40 +221,29 @@
   border: 0;
   border-radius: 999rem;
   padding: clamp(0.65rem, 2vw, 0.8rem) clamp(0.85rem, 3vw, 1.1rem);
-  background: var(--ink);
-  color: var(--paper);
-  cursor: pointer;
-  font-family: var(--font-body);
   font-size: clamp(0.85rem, 2.6vw, 1rem);
-  font-weight: 700;
   line-height: 1.1;
   touch-action: manipulation;
   min-block-size: 2.75rem;
 }
 
-.card-action:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.card-action--left {
-  justify-content: flex-start;
-}
-
-.card-action--right {
-  justify-content: flex-end;
-}
+.card-action:disabled { opacity: 0.4; cursor: not-allowed; }
+.card-action--left { justify-content: flex-start; }
+.card-action--right { justify-content: flex-end; }
 
 @media (min-width: 48rem) {
-  .swipe-card {
-    inline-size: min(58vw, 32rem);
-  }
+  .swipe-card,
+  .swipe-card-shell,
+  .card-actions { inline-size: min(58vw, 32rem); }
+}
 
-  .swipe-card-shell {
-    inline-size: min(58vw, 32rem);
-  }
-
-  .card-actions {
-    inline-size: min(58vw, 32rem);
-  }
+/* Era token transitions - swaps between [data-era] selectors animate over 600ms. */
+body, .game-shell, .landing-screen, .ending-screen,
+.card-view, .quality-track, .quality-fill,
+.card-action, .primary-action, .choice-hint, .portrait-slot {
+  transition:
+    background-color 600ms ease,
+    color 600ms ease,
+    border-color 600ms ease,
+    box-shadow 600ms ease;
 }

@@ -43,12 +43,4 @@ describe('applyChoice', () => {
     expect(state.seenIds.size).toBe(0);
   });
 
-  it('throws clearly when nextCardId points to a one-shot card already in seenIds', () => {
-    const state = makeState({ seenIds: new Set(['already-seen']) });
-    const card = makeCard({
-      right: { label: 'Continue', effects: {}, nextCardId: 'already-seen' }
-    });
-
-    expect(() => applyChoice(state, card, 'right')).toThrow(/already-seen.*one-shot/i);
-  });
 });

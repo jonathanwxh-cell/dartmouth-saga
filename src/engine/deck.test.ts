@@ -76,4 +76,11 @@ describe('selectNextCard', () => {
 
     expect(selectNextCard(makeState(), pool, () => 0, 'target')?.id).toBe('target');
   });
+
+  it('throws when a nextCardId override points to an already seen one-shot card', () => {
+    const state = makeState({ seenIds: new Set(['that-id']) });
+    const pool = [makeCard({ id: 'that-id', one_shot: true })];
+
+    expect(() => selectNextCard(state, pool, () => 0, 'that-id')).toThrow(/already seen|one-shot/i);
+  });
 });

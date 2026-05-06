@@ -1,0 +1,31 @@
+{
+  "id": "sample-funding-letter",
+  "era": "1956",
+  "weight": 5,
+  "requires": {
+    "funding": [0, 39]
+  },
+  "one_shot": true,
+  "speaker": {
+    "name": "Marvin Minsky",
+    "portrait": "minsky.png"
+  },
+  "prompt": "The budget ledger has started to look like a proof by contradiction. Someone suggests a crisp letter to the donors before the coffee bill becomes the most advanced machine in Hanover.",
+  "left": {
+    "label": "Write donors",
+    "effects": {
+      "funding": 20,
+      "public_trust": -6,
+      "team_morale": 3
+    },
+    "flags": ["donor-letter-sent"],
+    "nextCardId": "sample-flag-followup"
+  },
+  "right": {
+    "label": "Stay quiet",
+    "effects": {
+      "funding": -5,
+      "team_morale": 4
+    }
+  }
+}

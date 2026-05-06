@@ -1,0 +1,31 @@
+{
+  "id": "sample-meeting-shannon",
+  "era": "1956",
+  "weight": 10,
+  "one_shot": true,
+  "speaker": {
+    "name": "Claude Shannon",
+    "portrait": "shannon.png",
+    "title": "Bell Labs"
+  },
+  "prompt": "Shannon listens from the edge of the seminar room while everyone argues over what a thinking machine could mean. The summer is short, and the chalk is already running low.",
+  "left": {
+    "label": "Cut scope",
+    "effects": {
+      "funding": -15,
+      "compute": 5,
+      "team_morale": -4
+    },
+    "nextCardId": "sample-funding-letter"
+  },
+  "right": {
+    "label": "Commit loudly",
+    "effects": {
+      "symbolic_progress": 10,
+      "academic_credibility": 6,
+      "public_trust": 3,
+      "funding": -8
+    },
+    "flags": ["logic-workshop-opened"]
+  }
+}

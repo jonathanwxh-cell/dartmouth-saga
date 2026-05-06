@@ -6,7 +6,7 @@ on:
 
 jobs:
   quality:
-    name: lint typecheck test build
+    name: lint typecheck validate test build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,6 +26,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Validate cards
+        run: npm run validate-cards
 
       - name: Test
         run: npm test

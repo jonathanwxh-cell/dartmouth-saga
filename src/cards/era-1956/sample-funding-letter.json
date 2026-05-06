@@ -24,7 +24,7 @@
   "right": {
     "label": "Stay quiet",
     "effects": {
-      "funding": -5,
+      "funding": -40,
       "team_morale": 4
     }
   }

@@ -9,6 +9,7 @@ describe('useGameStore', () => {
     const state = useGameStore.getState();
 
     expect(state.currentCard).not.toBeNull();
+    expect(state.gameOver).toBeNull();
     expect(Object.values(state.qualities)).toEqual([50, 50, 50, 50, 50, 50]);
   });
 
@@ -47,5 +48,44 @@ describe('useGameStore', () => {
     };
 
     expect(readSequence()).toEqual(readSequence());
+  });
+
+  it("swipe sets gameOver with reason='boundary' when a quality crosses 0 or 100", () => {
+    const card = useGameStore.getState().currentCard;
+    if (!card) throw new Error('Expected a current card.');
+    useGameStore.setState({
+      currentCard: { ...card, left: { label: 'Crash', effects: { funding: -100 } } }
+    });
+
+    useGameStore.getState().swipe('left');
+
+    expect(useGameStore.getState().gameOver).toEqual({
+      reason: 'boundary',
+      quality: 'funding',
+      kind: 'collapse'
+    });
+  });
+
+  it("swipe sets gameOver with reason='pool-exhausted' when no eligible cards remain and no boundary hit", () => {
+    const card = useGameStore.getState().currentCard;
+    if (!card) throw new Error('Expected a current card.');
+    useGameStore.setState({
+      currentCard: { ...card, left: { label: 'Nudge', effects: { funding: -1 } } },
+      pool: []
+    });
+
+    useGameStore.getState().swipe('left');
+
+    expect(useGameStore.getState().currentCard).toBeNull();
+    expect(useGameStore.getState().gameOver).toEqual({ reason: 'pool-exhausted' });
+  });
+
+  it('reset() clears gameOver and re-inits', () => {
+    useGameStore.setState({ gameOver: { reason: 'pool-exhausted' }, currentCard: null });
+
+    useGameStore.getState().reset();
+
+    expect(useGameStore.getState().gameOver).toBeNull();
+    expect(useGameStore.getState().currentCard).not.toBeNull();
   });
 });

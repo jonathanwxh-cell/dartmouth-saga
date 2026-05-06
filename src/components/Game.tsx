@@ -3,8 +3,11 @@ import EndingScreen from './EndingScreen';
 import Landing from './Landing';
 import QualityMeters from './QualityMeters';
 import { useGameStore } from '../state/store';
+import { useEraAttribute } from '../styles/useEraAttribute';
 
 function Game() {
+  useEraAttribute();
+
   const currentCard = useGameStore((state) => state.currentCard);
   const gameOver = useGameStore((state) => state.gameOver);
   const qualities = useGameStore((state) => state.qualities);

@@ -1,7 +1,7 @@
 export type SwipeSide = 'left' | 'right';
 
 export function commitThreshold(viewportWidth: number) {
-  return viewportWidth * 0.35;
+  return Math.max(90, viewportWidth * 0.28);
 }
 
 export function swipeSideFromDelta(delta: number, threshold: number): SwipeSide | null {

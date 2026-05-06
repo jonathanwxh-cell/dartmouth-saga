@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import MuteToggle from './MuteToggle';
 import type { Quality } from '../engine/types';
 
 const qualityMeta: Array<{ key: Quality; label: string; short: string }> = [
@@ -18,30 +19,35 @@ const clamp = (value: number) => Math.min(100, Math.max(0, Math.round(value)));
 
 function QualityMeters({ qualities }: QualityMetersProps) {
   return (
-    <section className="quality-strip" aria-label="Quality meters">
-      {qualityMeta.map(({ key, label, short }) => {
-        const value = clamp(qualities[key]);
-        const style = { '--meter-value': `${value}%` } as CSSProperties;
+    <header className="quality-strip" aria-label="Quality meters">
+      <div className="quality-strip-actions">
+        <MuteToggle />
+      </div>
+      <div className="quality-meter-row">
+        {qualityMeta.map(({ key, label, short }) => {
+          const value = clamp(qualities[key]);
+          const style = { '--meter-value': `${value}%` } as CSSProperties;
 
-        return (
-          <div
-            key={key}
-            className="quality-meter"
-            role="progressbar"
-            aria-label={label}
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={value}
-          >
-            <span className="quality-label">{short}</span>
-            <span className="quality-track" style={style}>
-              <span className="quality-fill" />
-            </span>
-            <span className="quality-value">{value}</span>
-          </div>
-        );
-      })}
-    </section>
+          return (
+            <div
+              key={key}
+              className="quality-meter"
+              role="progressbar"
+              aria-label={label}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={value}
+            >
+              <span className="quality-label">{short}</span>
+              <span className="quality-track" style={style}>
+                <span className="quality-fill" />
+              </span>
+              <span className="quality-value">{value}</span>
+            </div>
+          );
+        })}
+      </div>
+    </header>
   );
 }
 

@@ -1,4 +1,5 @@
 import { AnimatePresence, animate, motion, useMotionValue, useTransform } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 import CardView from './CardView';
 import { commitThreshold, swipeSideFromDelta, type SwipeSide } from '../lib/swipe';
@@ -78,6 +79,26 @@ function CardStack() {
           </motion.div>
         </motion.div>
       </AnimatePresence>
+      <nav className="card-actions" aria-label="Card choices">
+        <button
+          type="button"
+          className="card-action card-action--left"
+          onClick={() => void commit('left')}
+          disabled={!!gameOver}
+        >
+          <ChevronLeft aria-hidden size={18} />
+          <span>{currentCard.left.label}</span>
+        </button>
+        <button
+          type="button"
+          className="card-action card-action--right"
+          onClick={() => void commit('right')}
+          disabled={!!gameOver}
+        >
+          <span>{currentCard.right.label}</span>
+          <ChevronRight aria-hidden size={18} />
+        </button>
+      </nav>
     </section>
   );
 }

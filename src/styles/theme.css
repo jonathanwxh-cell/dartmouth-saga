@@ -236,6 +236,7 @@
   line-height: 1.1;
   text-align: center;
   transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .choice-hint--left {
@@ -246,12 +247,56 @@
   right: clamp(0.6rem, 3vw, 1rem);
 }
 
+.card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.5rem, 2vw, 0.75rem);
+  inline-size: min(92vw, 28rem);
+  margin-block-start: clamp(0.75rem, 3vw, 1.25rem);
+}
+
+.card-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: 0;
+  border-radius: 999rem;
+  padding: clamp(0.65rem, 2vw, 0.8rem) clamp(0.85rem, 3vw, 1.1rem);
+  background: var(--ink);
+  color: var(--paper);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 2.6vw, 1rem);
+  font-weight: 700;
+  line-height: 1.1;
+  touch-action: manipulation;
+  min-block-size: 2.75rem;
+}
+
+.card-action:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.card-action--left {
+  justify-content: flex-start;
+}
+
+.card-action--right {
+  justify-content: flex-end;
+}
+
 @media (min-width: 48rem) {
   .swipe-card {
     inline-size: min(58vw, 32rem);
   }
 
   .swipe-card-shell {
+    inline-size: min(58vw, 32rem);
+  }
+
+  .card-actions {
     inline-size: min(58vw, 32rem);
   }
 }

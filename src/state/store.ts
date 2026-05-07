@@ -3,19 +3,23 @@ import { devtools } from 'zustand/middleware';
 import { audioEngine } from '../audio/audioEngine';
 import { selectNextCard } from '../engine/deck';
 import { checkBoundaryEnd } from '../engine/endings';
+import { selectEnding } from '../endings/era-1956';
 import { loadCards } from '../engine/loadCards';
 import { applyChoice } from '../engine/resolver';
 import { createRng, type Rng } from '../engine/rng';
 import type { Card, EngineEvent, Era, GameState, Quality } from '../engine/types';
+import {
+  clearEndingStats as clearEndingStatsStorage,
+  loadEndingStats,
+  recordEndingDiscovered,
+  saveEndingStats,
+  type EndingStats
+} from './endingStats';
 import { clearSnapshot, loadSnapshot, saveSnapshot, type LoadedSnapshot } from './save';
 
 const qualityKeys: Quality[] = [
-  'symbolic_progress',
-  'funding',
-  'public_trust',
-  'academic_credibility',
-  'compute',
-  'team_morale'
+  'symbolic_progress', 'funding', 'public_trust',
+  'academic_credibility', 'compute', 'team_morale'
 ];
 
 type SwipeSide = 'left' | 'right';
@@ -35,6 +39,9 @@ export interface GameStore extends GameState {
   lastEvent: EngineEvent | null;
   tutorialSeen: boolean;
   hasSave: boolean;
+  endingStats: EndingStats;
+  swipesThisRun: number;
+  lastDiscoveryWasNew: boolean;
   init: (seed?: number) => void;
   reset: () => void;
   setAudioMuted: (muted: boolean) => void;
@@ -42,6 +49,7 @@ export interface GameStore extends GameState {
   markTutorialSeen: () => void;
   continueSavedGame: () => Promise<boolean>;
   refreshSaveStatus: () => Promise<void>;
+  clearEndingStats: () => void;
 }
 
 function initialQualities() {
@@ -74,7 +82,17 @@ function buildRun(seed: number) {
   const state = baseState();
   const currentCard = selectNextCard(state, pool, rng);
 
-  return { ...state, currentCard, gameOver: null, pool, rng, seed, lastEvent: null };
+  return {
+    ...state,
+    currentCard,
+    gameOver: null,
+    pool,
+    rng,
+    seed,
+    lastEvent: null,
+    swipesThisRun: 0,
+    lastDiscoveryWasNew: false
+  };
 }
 
 function hasPlayableSnapshot(snapshot: LoadedSnapshot | null) {
@@ -109,7 +127,26 @@ function rebuildFromSnapshot(snapshot: LoadedSnapshot) {
     rng,
     seed: snapshot.seed,
     lastEvent: null,
-    tutorialSeen: snapshot.tutorialSeen || readTutorialSeen()
+    tutorialSeen: snapshot.tutorialSeen || readTutorialSeen(),
+    endingStats: loadEndingStats(),
+    swipesThisRun: snapshot.swipesThisRun,
+    lastDiscoveryWasNew: false
+  };
+}
+
+function endingProgressFor(
+  state: GameState,
+  gameOver: GameOver,
+  endingStats: EndingStats
+): Pick<GameStore, 'endingStats' | 'lastDiscoveryWasNew'> {
+  const ending = selectEnding(state, gameOver);
+  const previousCount = endingStats.discovered[ending.id]?.count ?? 0;
+  const nextEndingStats = recordEndingDiscovered(endingStats, ending.id);
+  saveEndingStats(nextEndingStats);
+
+  return {
+    endingStats: nextEndingStats,
+    lastDiscoveryWasNew: previousCount === 0
   };
 }
 
@@ -125,9 +162,12 @@ export const useGameStore = create<GameStore>()(
       lastEvent: null,
       tutorialSeen: readTutorialSeen(),
       hasSave: false,
+      endingStats: loadEndingStats(),
+      swipesThisRun: 0,
+      lastDiscoveryWasNew: false,
       init: (seed = 1956) => {
         void clearSnapshot().catch(() => undefined);
-        set({ ...buildRun(seed), hasSave: false }, false, 'game/init');
+        set({ ...buildRun(seed), hasSave: false, endingStats: loadEndingStats() }, false, 'game/init');
       },
       reset: () => {
         get().init();
@@ -138,18 +178,22 @@ export const useGameStore = create<GameStore>()(
         void saveSnapshot(get()).catch(() => undefined);
       },
       swipe: (side) => {
-        const { currentCard, gameOver, pool, rng } = get();
+        const { currentCard, gameOver, pool, rng, swipesThisRun, endingStats } = get();
         if (gameOver || !currentCard) return;
 
         const result = applyChoice(get(), currentCard, side);
+        const nextSwipeCount = swipesThisRun + 1;
         const boundary = checkBoundaryEnd(result.state);
         if (boundary) {
+          const nextGameOver: GameOver = { reason: 'boundary', ...boundary };
           set(
             {
               ...result.state,
-              gameOver: { reason: 'boundary', ...boundary },
+              gameOver: nextGameOver,
               lastEvent: result.event,
-              hasSave: true
+              hasSave: true,
+              swipesThisRun: nextSwipeCount,
+              ...endingProgressFor(result.state, nextGameOver, endingStats)
             },
             false,
             'game/swipe-boundary-end'
@@ -160,13 +204,16 @@ export const useGameStore = create<GameStore>()(
 
         const nextCard = selectNextCard(result.state, pool, rng, result.event.nextCardId);
         if (!nextCard) {
+          const nextGameOver: GameOver = { reason: 'pool-exhausted' };
           set(
             {
               ...result.state,
               currentCard: null,
-              gameOver: { reason: 'pool-exhausted' },
+              gameOver: nextGameOver,
               lastEvent: result.event,
-              hasSave: true
+              hasSave: true,
+              swipesThisRun: nextSwipeCount,
+              ...endingProgressFor(result.state, nextGameOver, endingStats)
             },
             false,
             'game/swipe-pool-exhausted'
@@ -176,7 +223,15 @@ export const useGameStore = create<GameStore>()(
         }
 
         set(
-          { ...result.state, currentCard: nextCard, gameOver: null, lastEvent: result.event, hasSave: true },
+          {
+            ...result.state,
+            currentCard: nextCard,
+            gameOver: null,
+            lastEvent: result.event,
+            hasSave: true,
+            swipesThisRun: nextSwipeCount,
+            lastDiscoveryWasNew: false
+          },
           false,
           'game/swipe'
         );
@@ -204,6 +259,10 @@ export const useGameStore = create<GameStore>()(
       refreshSaveStatus: async () => {
         const snapshot = await loadSnapshot().catch(() => null);
         set({ hasSave: hasPlayableSnapshot(snapshot) }, false, 'save/status');
+      },
+      clearEndingStats: () => {
+        clearEndingStatsStorage();
+        set({ endingStats: loadEndingStats() }, false, 'ending-stats/clear');
       }
     }),
     { name: 'Dartmouth Saga' }

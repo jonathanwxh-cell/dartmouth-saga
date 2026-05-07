@@ -85,6 +85,39 @@ describe('useGameStore', () => {
     });
   });
 
+  it('swipe records ending progress and marks a first-time discovery when gameOver is set', () => {
+    localStorage.clear();
+    const card = useGameStore.getState().currentCard;
+    if (!card) throw new Error('Expected a current card.');
+    useGameStore.setState({
+      currentCard: { ...card, left: { label: 'Crash', effects: { funding: -100 } } },
+      endingStats: { discovered: {}, totalRuns: 0 },
+      swipesThisRun: 0,
+      lastDiscoveryWasNew: false
+    });
+
+    useGameStore.getState().swipe('left');
+
+    const state = useGameStore.getState();
+    expect(state.endingStats.discovered['funding-collapse']?.count).toBe(1);
+    expect(state.endingStats.totalRuns).toBe(1);
+    expect(state.lastDiscoveryWasNew).toBe(true);
+    expect(state.swipesThisRun).toBe(1);
+  });
+
+  it('swipe increments swipesThisRun without setting gameOver', () => {
+    const card = useGameStore.getState().currentCard;
+    if (!card) throw new Error('Expected a current card.');
+    useGameStore.setState({
+      currentCard: { ...card, left: { label: 'Nudge', effects: { funding: -1 } } },
+      swipesThisRun: 0
+    });
+
+    useGameStore.getState().swipe('left');
+
+    expect(useGameStore.getState().swipesThisRun).toBe(1);
+  });
+
   it("swipe sets gameOver with reason='pool-exhausted' when no eligible cards remain and no boundary hit", () => {
     const card = useGameStore.getState().currentCard;
     if (!card) throw new Error('Expected a current card.');

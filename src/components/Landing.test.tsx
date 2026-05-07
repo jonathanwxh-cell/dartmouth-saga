@@ -17,13 +17,17 @@ function arrangeStore(hasSave: boolean) {
     tutorialSeen: true,
     lastEvent: null,
     hasSave,
+    endingStats: { discovered: {}, totalRuns: 0 },
+    swipesThisRun: 0,
+    lastDiscoveryWasNew: false,
     init,
     reset: vi.fn(),
     setAudioMuted: vi.fn(),
     swipe: vi.fn(),
     markTutorialSeen: vi.fn(),
     continueSavedGame,
-    refreshSaveStatus
+    refreshSaveStatus,
+    clearEndingStats: vi.fn()
   });
 
   return { init, continueSavedGame, refreshSaveStatus };
@@ -64,5 +68,23 @@ describe('Landing', () => {
     fireEvent.click(screen.getByRole('button', { name: /today's challenge/i }));
 
     expect(init).toHaveBeenCalledWith(expect.any(Number));
+  });
+
+  it('renders the endings discovered counter below the action buttons', () => {
+    arrangeStore(false);
+    useGameStore.setState({
+      endingStats: {
+        discovered: {
+          'proposal-funded': { count: 1, firstSeen: '2026-05-07T04:30:00.000Z' },
+          partial: { count: 1, firstSeen: '2026-05-07T04:30:00.000Z' },
+          canceled: { count: 1, firstSeen: '2026-05-07T04:30:00.000Z' }
+        },
+        totalRuns: 3
+      }
+    });
+
+    render(<Landing />);
+
+    expect(screen.getByText('Endings discovered: 3 / 15')).toBeInTheDocument();
   });
 });

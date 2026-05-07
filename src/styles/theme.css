@@ -107,6 +107,120 @@
 
 .landing-actions .primary-action { justify-content: center; inline-size: 100%; }
 
+.ending-discovered-counter,
+.run-summary-line,
+.new-ending-flourish {
+  justify-self: center;
+}
+
+.ending-discovered-counter,
+.run-summary-line {
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 2.4vw, 0.92rem);
+}
+
+.new-ending-flourish {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 2.2vw, 0.9rem);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.endings-archive {
+  justify-self: center;
+  inline-size: min(100%, 42rem);
+  text-align: start;
+}
+
+.endings-archive-summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 2.3vw, 0.92rem);
+  font-weight: 600;
+  text-align: center;
+}
+
+.endings-archive-summary:hover,
+.endings-archive-summary:focus-visible {
+  color: var(--ink);
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.endings-archive-content {
+  display: grid;
+  gap: 1.1rem;
+  margin-block-start: 1rem;
+}
+
+.ending-category {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.ending-category h2 {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 2.7vw, 1.1rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ending-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ending-row {
+  display: grid;
+  gap: 0.25rem;
+  border-block-start: 1px solid var(--paper-shadow);
+  padding-block-start: 0.65rem;
+}
+
+.ending-row h3,
+.ending-row p {
+  margin: 0;
+}
+
+.ending-row h3 {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 3vw, 1.35rem);
+  line-height: 1.15;
+}
+
+.ending-row h3 span {
+  color: var(--accent);
+}
+
+.ending-row p {
+  color: var(--ink-muted);
+  font-size: clamp(0.9rem, 2.4vw, 1rem);
+  line-height: 1.45;
+}
+
+.ending-row-meta {
+  font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 2vw, 0.82rem);
+}
+
+.ending-row--locked {
+  opacity: 0.78;
+}
+
+.ending-row--locked h3,
+.ending-row--locked .ending-row-meta {
+  color: var(--ink-muted);
+}
+
 .primary-action:hover,
 .primary-action:focus-visible,
 .card-action:hover,

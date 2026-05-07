@@ -28,7 +28,8 @@ function makeSnapshotSource() {
     ...state,
     gameOver,
     seed: 1956,
-    tutorialSeen: true
+    tutorialSeen: true,
+    swipesThisRun: 12
   };
 }
 
@@ -49,7 +50,8 @@ describe('saveSnapshot', () => {
       era: source.era,
       gameOver: source.gameOver,
       seed: source.seed,
-      tutorialSeen: source.tutorialSeen
+      tutorialSeen: source.tutorialSeen,
+      swipesThisRun: source.swipesThisRun
     });
   });
 
@@ -71,5 +73,23 @@ describe('saveSnapshot', () => {
     await clearSnapshot();
 
     await expect(loadSnapshot()).resolves.toBeNull();
+  });
+
+  it('loadSnapshot defaults legacy v1 snapshots to zero swipesThisRun', async () => {
+    memory.set('dartmouth-saga:v1', {
+      version: 1,
+      seed: 1956,
+      qualities: makeSnapshotSource().qualities,
+      flags: ['press-called'],
+      seenIds: ['arrival-mccarthy-greeting'],
+      currentCardId: null,
+      era: '1956',
+      gameOver: null,
+      tutorialSeen: true
+    });
+
+    const loaded = await loadSnapshot();
+
+    expect(loaded?.swipesThisRun).toBe(0);
   });
 });

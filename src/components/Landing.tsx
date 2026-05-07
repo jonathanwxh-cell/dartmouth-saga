@@ -1,9 +1,12 @@
 import { useEffect } from 'react';
+import EndingsArchive from './EndingsArchive';
+import { ALL_ENDINGS } from '../endings/era-1956';
 import { dailySeed } from '../lib/dailyChallenge';
 import { useGameStore } from '../state/store';
 
 function Landing() {
   const continueSavedGame = useGameStore((state) => state.continueSavedGame);
+  const discoveredCount = useGameStore((state) => Object.keys(state.endingStats.discovered).length);
   const hasSave = useGameStore((state) => state.hasSave);
   const init = useGameStore((state) => state.init);
   const refreshSaveStatus = useGameStore((state) => state.refreshSaveStatus);
@@ -34,6 +37,10 @@ function Landing() {
             Today&apos;s challenge
           </button>
         </div>
+        <p className="ending-discovered-counter">
+          Endings discovered: {discoveredCount} / {ALL_ENDINGS.length}
+        </p>
+        <EndingsArchive />
       </section>
       <footer>Hanover, NH · Summer 1956</footer>
     </main>

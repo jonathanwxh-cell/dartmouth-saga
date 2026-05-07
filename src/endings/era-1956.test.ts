@@ -1,4 +1,10 @@
-import { BOUNDARY_ENDINGS, MAIN_ENDINGS, selectEnding } from './era-1956';
+import {
+  BOUNDARY_ENDINGS,
+  MAIN_ENDINGS,
+  endingCategoryLabel,
+  endingHints,
+  selectEnding
+} from './era-1956';
 import { makeState, qualities } from '../engine/testFixtures';
 import { simulateRun } from '../lib/simulate';
 
@@ -61,6 +67,20 @@ describe('selectEnding', () => {
     ]);
 
     expect(Object.keys(BOUNDARY_ENDINGS).sort()).toEqual(expectedKeys.sort());
+  });
+
+  it('provides one mechanical hint for every ending', () => {
+    const endingIds = [...Object.keys(MAIN_ENDINGS), ...Object.keys(BOUNDARY_ENDINGS)];
+
+    expect(Object.keys(endingHints).sort()).toEqual(endingIds.sort());
+    expect(endingHints['public_trust-overheat']).toBe('Push public trust to its limit.');
+  });
+
+  it('labels main and boundary ending categories', () => {
+    expect(endingCategoryLabel(MAIN_ENDINGS.partial)).toBe('Three main endings');
+    expect(endingCategoryLabel(BOUNDARY_ENDINGS['funding-collapse']!)).toBe(
+      'Twelve boundary endings',
+    );
   });
 
   it('proposal-funded ending is reachable from at least one seeded random-policy run', () => {

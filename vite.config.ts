@@ -33,6 +33,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
+      registerType: 'autoUpdate',
       includeAssets: [
         ...icons.map((icon) => icon.src),
         'og-image.png',
@@ -40,7 +41,12 @@ export default defineConfig({
         'splash-1290x2796.png',
         'splash-2048x2732.png'
       ],
-      manifest
+      manifest,
+      workbox: {
+        cleanupOutdatedCaches: true,
+        skipWaiting: true,
+        clientsClaim: true
+      }
     })
   ]
 });

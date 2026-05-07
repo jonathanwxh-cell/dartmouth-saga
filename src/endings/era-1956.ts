@@ -137,6 +137,36 @@ export const BOUNDARY_ENDINGS: Record<string, Ending> = {
   }
 };
 
+export const endingHints: Record<string, string> = {
+  // main endings (3)
+  'proposal-funded':
+    'Reach the end of the workshop with progress, funding, and credibility intact.',
+  partial: 'Reach the end of the workshop with mid-range progress and modest funding.',
+  canceled: 'Reach the end of the workshop with low progress or low funding.',
+
+  // boundary collapse (6)
+  'symbolic_progress-collapse': 'Let symbolic progress fall to zero.',
+  'funding-collapse': 'Let funding fall to zero.',
+  'public_trust-collapse': 'Let public trust fall to zero.',
+  'academic_credibility-collapse': 'Let academic credibility fall to zero.',
+  'compute-collapse': 'Let compute hours fall to zero.',
+  'team_morale-collapse': 'Let team morale fall to zero.',
+
+  // boundary overheat (6)
+  'symbolic_progress-overheat': 'Push symbolic progress to its limit.',
+  'funding-overheat': 'Push funding to its limit.',
+  'public_trust-overheat': 'Push public trust to its limit.',
+  'academic_credibility-overheat': 'Push academic credibility to its limit.',
+  'compute-overheat': 'Push compute hours to its limit.',
+  'team_morale-overheat': 'Push team morale to its limit.'
+};
+
+export const ALL_ENDINGS = [...Object.values(MAIN_ENDINGS), ...Object.values(BOUNDARY_ENDINGS)];
+
+export function endingCategoryLabel(ending: Ending): string {
+  return ending.kind === 'main' ? 'Three main endings' : 'Twelve boundary endings';
+}
+
 export function selectEnding(state: GameState, gameOver: EndingGameOver): Ending {
   if (gameOver.reason === 'boundary') {
     const key = `${gameOver.quality}-${gameOver.kind}`;

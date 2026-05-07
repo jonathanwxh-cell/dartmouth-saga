@@ -1,7 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { useGameStore } from './state/store';
 
 describe('App', () => {
+  beforeEach(() => {
+    useGameStore.setState({ currentCard: null, gameOver: null, tutorialSeen: true });
+  });
+
   it('renders the project title', () => {
     render(<App />);
 

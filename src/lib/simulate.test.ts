@@ -16,6 +16,18 @@ describe('simulateRun', () => {
     expect(result.swipeCount).toBeGreaterThan(0);
     expect(result.finalQualities).toHaveProperty('symbolic_progress');
   });
+
+  it('reaches interstitials in the typical run', () => {
+    const interstitialCounts = [42, 1956, 2026, 704].map((seed) => {
+      const result = simulateRun(seed, 'random') as ReturnType<typeof simulateRun> & {
+        seenIds?: string[];
+      };
+
+      return (result.seenIds ?? []).filter((id) => id.startsWith('interstitial-')).length;
+    });
+
+    expect(Math.max(...interstitialCounts)).toBeGreaterThanOrEqual(2);
+  });
 });
 
 describe('simulateMany', () => {

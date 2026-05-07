@@ -19,6 +19,7 @@ export interface RunResult {
   endingId: string;
   swipeCount: number;
   finalQualities: Record<Quality, number>;
+  seenIds: string[];
 }
 
 export type ChoicePolicy = 'random' | 'left' | 'right';
@@ -58,13 +59,23 @@ export function simulateRun(seed: number, choicePolicy: ChoicePolicy = 'random')
     const boundary = checkBoundaryEnd(state);
     if (boundary) {
       const ending = selectEnding(state, { reason: 'boundary', ...boundary });
-      return { endingId: ending.id, swipeCount, finalQualities: state.qualities };
+      return {
+        endingId: ending.id,
+        swipeCount,
+        finalQualities: state.qualities,
+        seenIds: [...state.seenIds],
+      };
     }
 
     currentCard = selectNextCard(state, pool, rng, result.event.nextCardId);
     if (!currentCard) {
       const ending = selectEnding(state, { reason: 'pool-exhausted' });
-      return { endingId: ending.id, swipeCount, finalQualities: state.qualities };
+      return {
+        endingId: ending.id,
+        swipeCount,
+        finalQualities: state.qualities,
+        seenIds: [...state.seenIds],
+      };
     }
 
     if (swipeCount > pool.length + 20) {
@@ -73,7 +84,12 @@ export function simulateRun(seed: number, choicePolicy: ChoicePolicy = 'random')
   }
 
   const ending = selectEnding(state, { reason: 'pool-exhausted' });
-  return { endingId: ending.id, swipeCount, finalQualities: state.qualities };
+  return {
+    endingId: ending.id,
+    swipeCount,
+    finalQualities: state.qualities,
+    seenIds: [...state.seenIds],
+  };
 }
 
 export function simulateMany(

@@ -1,0 +1,21 @@
+{
+  "id": "notebook-night-before",
+  "era": "1956",
+  "weight": 6,
+  "form": "notebook",
+  "flags_required": ["closing-started", "proposal-opening-set"],
+  "flags_forbidden": ["notebook-night-before-written", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "Your notebook", "portrait": "" },
+  "prompt": "The night before the cover sheet goes in the mail. The four names are typed; three are signed. Shannon has hesitated for nine days. Tomorrow we will know either way. The proposal claims a generation; I am not sure I believe it. I will type the cover memo regardless.",
+  "left": {
+    "label": "Sleep a few hours",
+    "effects": { "team_morale": 3, "symbolic_progress": -1 },
+    "flags": ["notebook-night-before-written"]
+  },
+  "right": {
+    "label": "Stay up rewriting",
+    "effects": { "academic_credibility": 3, "funding": -2 },
+    "flags": ["notebook-night-before-written", "stayed-up-rewriting"]
+  }
+}

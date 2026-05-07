@@ -1,0 +1,21 @@
+{
+  "id": "interstitial-september-coming",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "flags_required": ["closing-started", "proposal-opening-set", "final-name-vote"],
+  "flags_forbidden": ["interstitial-september-coming-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "Three weeks left. The Rockefeller envelope is now open and the number is smaller than asked. The cover sheet has four names typed. Three of them are signed. Outside, somebody is mowing the Lord Hall lawn for what may be the last time this season.",
+  "left": {
+    "label": "Continue",
+    "effects": { "symbolic_progress": 1 },
+    "flags": ["interstitial-september-coming-shown"]
+  },
+  "right": {
+    "label": "Continue",
+    "effects": { "symbolic_progress": 1 },
+    "flags": ["interstitial-september-coming-shown"]
+  }
+}

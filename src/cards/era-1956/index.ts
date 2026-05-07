@@ -23,9 +23,13 @@ import card22 from './opening/opening-mccarthy-naming-2.json';
 import card23 from './opening/opening-funding-balance.json';
 import card24 from './opening/opening-bell-labs-call.json';
 import card25 from './opening/opening-end-of-week-2.json';
+import interstitialWeekOneEnds from './opening/interstitial-week-one-ends.json';
+import notebookDayThree from './opening/notebook-day-three.json';
 import card26 from './middle/middle-newell-simon-arrival.json';
 import card27 from './middle/middle-logic-theorist-demo-1.json';
 import card28 from './middle/middle-logic-theorist-result.json';
+import interstitialMidJuly from './middle/interstitial-mid-july.json';
+import notebookAfterLogicTheorist from './middle/notebook-after-logic-theorist.json';
 import card29 from './middle/middle-naming-newell-counter.json';
 import card30 from './middle/middle-shannon-skeptic.json';
 import card31 from './middle/middle-solomonoff-paper.json';
@@ -49,12 +53,15 @@ import card48 from './middle/middle-shannon-departure-talk.json';
 import card49 from './middle/middle-late-night-debate.json';
 import card50 from './middle/middle-press-time-magazine.json';
 import card51 from './middle/middle-rockefeller-progress-2.json';
+import interstitialAugust from './middle/interstitial-august.json';
 import card52 from './middle/middle-bench-fire-scare.json';
 import card53 from './middle/middle-program-list.json';
 import card54 from './middle/middle-minsky-leaves-early-rumor.json';
 import card55 from './middle/middle-end-of-july.json';
 import card56 from './closing/closing-proposal-opening-paragraph.json';
+import notebookNightBefore from './closing/notebook-night-before.json';
 import card57 from './closing/closing-naming-final.json';
+import interstitialSeptemberComing from './closing/interstitial-september-coming.json';
 import card58 from './closing/closing-shannon-leaves.json';
 import card59 from './closing/closing-rockefeller-letter-arrives.json';
 import card60 from './closing/closing-trim-the-budget.json';
@@ -106,9 +113,13 @@ const rawCards = [
   card23,
   card24,
   card25,
+  interstitialWeekOneEnds,
+  notebookDayThree,
   card26,
   card27,
   card28,
+  interstitialMidJuly,
+  notebookAfterLogicTheorist,
   card29,
   card30,
   card31,
@@ -132,12 +143,15 @@ const rawCards = [
   card49,
   card50,
   card51,
+  interstitialAugust,
   card52,
   card53,
   card54,
   card55,
   card56,
+  notebookNightBefore,
   card57,
+  interstitialSeptemberComing,
   card58,
   card59,
   card60,

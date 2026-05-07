@@ -2,6 +2,7 @@
   "id": "closing-shannon-final-letter",
   "era": "1956",
   "weight": 6,
+  "form": "letter",
   "flags_required": [
     "closing-started",
     "shannon-engaged"

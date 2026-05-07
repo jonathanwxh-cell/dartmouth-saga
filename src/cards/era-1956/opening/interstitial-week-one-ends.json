@@ -1,0 +1,21 @@
+{
+  "id": "interstitial-week-one-ends",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "flags_required": ["arrival-greeted", "proposal-read", "naming-debate-held"],
+  "flags_forbidden": ["interstitial-week-one-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "Week One ends. The chalk supply is holding up. Claude Shannon has stopped attending the morning sessions, but is on the Lord Hall lawn most evenings, smoking. Newell and Simon are due before the next week's end. The proposal sits two pages, both heavily annotated, neither numbered.",
+  "left": {
+    "label": "Continue",
+    "effects": { "team_morale": 1 },
+    "flags": ["interstitial-week-one-shown"]
+  },
+  "right": {
+    "label": "Continue",
+    "effects": { "team_morale": 1 },
+    "flags": ["interstitial-week-one-shown"]
+  }
+}

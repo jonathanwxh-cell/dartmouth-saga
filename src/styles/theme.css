@@ -36,6 +36,9 @@
   --font-body: 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
+body[data-act="opening"] { --card-bg: #faf3df; }
+body[data-act="middle"] { --card-bg: #f8efd5; }
+body[data-act="closing"] { --card-bg: #f4ead0; }
 .landing-screen,
 .onboarding-screen,
 .ending-screen,
@@ -347,8 +350,36 @@
   padding: clamp(1.1rem, 4vw, 1.8rem); background: var(--card-bg); box-shadow: var(--card-shadow);
 }
 
+.card-view--letter,
+.card-view--newswire,
+.card-view--notebook,
+.card-view--interstitial { grid-template-rows: auto 1fr auto; }
+
+.card-view--letter { background: linear-gradient(to bottom, var(--card-bg), var(--paper)); }
+.card-view--newswire { background: var(--paper); }
+.card-view--notebook {
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(1.5em - 1px),
+      var(--paper-shadow) calc(1.5em - 1px),
+      var(--paper-shadow) 1.5em
+    ),
+    var(--card-bg);
+}
+.card-view--interstitial {
+  justify-items: center;
+  background:
+    linear-gradient(135deg, transparent 0 46%, var(--paper-shadow) 46% 47%, transparent 47% 100%),
+    var(--card-bg);
+}
+
 .card-header { text-align: center; }
-.card-header h2, .speaker-title, .card-prompt { margin: 0; }
+.card-header h2, .speaker-title, .card-prompt,
+.card-letter-header p, .card-letter-header span, .card-letter-signature,
+.card-wire-header p, .card-wire-source, .card-notebook-header p,
+.card-interstitial-header span { margin: 0; }
 
 .card-header h2 {
   font-family: var(--font-display);
@@ -387,6 +418,62 @@
   letter-spacing: 0.005em;
   line-height: 1.65;
   text-align: center;
+}
+
+.card-letter-header,
+.card-wire-header,
+.card-notebook-header,
+.card-interstitial-header {
+  display: flex; align-items: center; inline-size: 100%;
+  color: var(--ink-muted); font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 2vw, 0.86rem);
+}
+
+.card-letter-header { justify-content: space-between; }
+.card-letter-header span {
+  border: 1px solid var(--card-border); padding: 0.24rem 0.42rem;
+  color: var(--sepia); opacity: 0.68;
+}
+.card-letter-prompt {
+  font-size: clamp(0.98rem, 3.5vw, 1.2rem);
+  text-align: justify;
+}
+.card-letter-signature {
+  justify-self: end; color: var(--ink); font-family: var(--font-display);
+  font-size: clamp(1.05rem, 3vw, 1.25rem); font-style: italic;
+}
+
+.card-wire-header {
+  justify-content: center; color: var(--accent);
+  font-weight: 700; text-transform: uppercase;
+}
+.card-wire-prompt {
+  font-family: var(--font-mono);
+  font-size: clamp(0.92rem, 3vw, 1.08rem);
+  line-height: 1.7;
+  text-align: start;
+}
+.card-wire-source {
+  justify-self: end; color: var(--ink-muted); font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 2vw, 0.86rem);
+}
+
+.card-notebook-header { font-style: italic; }
+.card-notebook-prompt {
+  padding-inline-start: clamp(0.35rem, 2vw, 0.75rem);
+  font-size: clamp(1rem, 3.6vw, 1.25rem);
+  letter-spacing: 0;
+  text-align: start;
+}
+
+.card-interstitial-header {
+  justify-content: center; gap: 0.45rem;
+  font-weight: 700; text-transform: uppercase;
+}
+.card-interstitial-prompt {
+  max-inline-size: 22rem;
+  font-size: clamp(1.08rem, 4vw, 1.45rem);
+  line-height: 1.75;
 }
 
 .choice-hint {

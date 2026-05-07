@@ -2,6 +2,7 @@
   "id": "middle-wiener-letter-arrives",
   "era": "1956",
   "weight": 8,
+  "form": "letter",
   "flags_required": [
     "middle-started"
   ],

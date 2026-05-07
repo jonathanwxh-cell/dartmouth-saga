@@ -1,0 +1,21 @@
+{
+  "id": "notebook-day-three",
+  "era": "1956",
+  "weight": 6,
+  "form": "notebook",
+  "flags_required": ["arrival-greeted", "shannon-arrived", "minsky-arrived"],
+  "flags_forbidden": ["notebook-day-three-written", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "Your notebook", "portrait": "" },
+  "prompt": "Sketched in pencil at the back of your desk drawer: McCarthy's hairline thicker than last summer's photographs would suggest. Shannon brought his maze-running mouse and refused to demonstrate it. Minsky, on the other hand, will demonstrate anything to anyone. Solomonoff has not yet introduced himself. The chalk supply is holding.",
+  "left": {
+    "label": "Close the notebook",
+    "effects": { "team_morale": 2 },
+    "flags": ["notebook-day-three-written"]
+  },
+  "right": {
+    "label": "Add a margin note",
+    "effects": { "academic_credibility": 2, "team_morale": -1 },
+    "flags": ["notebook-day-three-written", "notebook-margin-note"]
+  }
+}

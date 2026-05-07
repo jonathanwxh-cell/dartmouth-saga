@@ -5,10 +5,12 @@ import Onboarding from './Onboarding';
 import QualityMeters from './QualityMeters';
 import { useAudio } from '../audio/useAudio';
 import { useGameStore } from '../state/store';
+import { useActAttribute } from '../styles/useActAttribute';
 import { useEraAttribute } from '../styles/useEraAttribute';
 
 function Game() {
   useEraAttribute();
+  useActAttribute();
   useAudio();
 
   const currentCard = useGameStore((state) => state.currentCard);

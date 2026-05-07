@@ -37,6 +37,7 @@
   --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
 .landing-screen,
+.onboarding-screen,
 .ending-screen,
 .game-shell {
   box-sizing: border-box; min-block-size: 100svh; background: var(--paper);
@@ -44,26 +45,31 @@
 }
 
 .landing-screen,
+.onboarding-screen,
 .ending-screen {
   display: grid; grid-template-rows: 1fr auto;
   padding: clamp(1.25rem, 5vw, 4rem); text-align: center;
 }
 
 .landing-panel,
+.onboarding-panel,
 .ending-panel {
   align-self: center; justify-self: center; display: grid;
   gap: clamp(1rem, 3vw, 1.5rem); max-inline-size: 44rem;
 }
 
 .landing-panel h1,
+.onboarding-panel h1,
 .ending-panel h1 {
   margin: 0; font-family: var(--font-display);
   font-size: clamp(3rem, 13vw, 7rem); font-weight: 600; line-height: 0.95;
 }
 
 .ending-panel h1 { font-size: clamp(2.25rem, 10vw, 5.5rem); }
+.onboarding-panel h1 { font-size: clamp(2.5rem, 10vw, 5.5rem); }
 
 .landing-panel p,
+.onboarding-panel p,
 .ending-panel p,
 .landing-screen footer {
   margin: 0; color: var(--ink-muted);
@@ -86,6 +92,20 @@
   gap: 0.55rem; border: 0; border-radius: 999rem;
   padding: clamp(0.75rem, 2vw, 0.9rem) clamp(1.1rem, 4vw, 1.6rem);
 }
+
+.primary-action--secondary {
+  background: var(--accent); color: var(--paper);
+}
+
+.primary-action--quiet {
+  border: 1px solid var(--card-border); background: transparent; color: var(--ink);
+}
+
+.landing-actions {
+  justify-self: center; display: grid; gap: 0.65rem; inline-size: min(100%, 18rem);
+}
+
+.landing-actions .primary-action { justify-content: center; inline-size: 100%; }
 
 .primary-action:hover,
 .primary-action:focus-visible,
@@ -112,11 +132,13 @@
   gap: clamp(0.25rem, 1.5vw, 0.75rem);
 }
 
-.quality-meter { display: grid; gap: 0.25rem; min-inline-size: 0; color: var(--ink); }
+.quality-meter {
+  position: relative; display: grid; gap: 0.25rem; min-inline-size: 0; color: var(--ink);
+}
 
 .quality-label,
 .quality-value {
-  font-family: var(--font-mono); font-size: clamp(0.62rem, 2vw, 0.78rem);
+  font-family: var(--font-mono); font-size: clamp(0.58rem, 1.8vw, 0.72rem);
   font-weight: 600; line-height: 1;
 }
 
@@ -130,6 +152,56 @@
 .quality-fill {
   display: block; inline-size: var(--meter-value); block-size: 100%;
   border-radius: inherit; background: var(--meter-fill);
+  transition: inline-size 400ms ease, background-color 600ms ease;
+}
+
+.meter-delta {
+  position: absolute; inset-block-start: -1.35rem; inset-inline-start: 50%;
+  z-index: 2; transform: translateX(-50%);
+  white-space: nowrap; color: var(--accent); font-family: var(--font-body);
+  font-size: clamp(0.72rem, 2vw, 0.85rem); font-weight: 600; pointer-events: none;
+}
+
+.onboarding-screen {
+  padding-block-end: max(clamp(1.25rem, 5vw, 4rem), env(safe-area-inset-bottom) + 0.75rem);
+}
+
+.onboarding-copy {
+  display: grid; gap: clamp(0.75rem, 2vw, 1rem);
+  justify-self: center; max-inline-size: 43rem;
+}
+
+.meter-guide {
+  justify-self: center; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem; inline-size: min(100%, 34rem);
+  border: 1px solid var(--card-border); border-radius: 0.5rem;
+  padding: clamp(0.65rem, 2vw, 0.85rem); background: var(--card-bg);
+}
+
+.meter-guide-row {
+  display: grid; grid-template-columns: 4.4rem 1fr; gap: 0.65rem; align-items: baseline;
+  min-inline-size: 0; text-align: start;
+}
+
+.meter-guide-code {
+  color: var(--accent); font-family: var(--font-mono);
+  font-size: clamp(0.68rem, 2vw, 0.82rem); font-weight: 600;
+}
+
+.meter-guide-name {
+  color: var(--ink); font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2.4vw, 1rem); line-height: 1.2;
+}
+
+.onboarding-skip {
+  justify-self: center; border: 0; background: transparent; color: var(--ink-muted);
+  cursor: pointer; font-family: var(--font-body); font-size: clamp(0.9rem, 2.5vw, 1rem);
+  text-decoration: underline; text-underline-offset: 0.16em;
+}
+
+.onboarding-skip:hover,
+.onboarding-skip:focus-visible {
+  color: var(--accent); outline: 1px solid var(--accent); outline-offset: 3px;
 }
 
 .mute-toggle {
@@ -254,10 +326,14 @@
   .card-actions { inline-size: min(58vw, 32rem); }
 }
 
+@media (max-width: 34rem) {
+  .meter-guide { grid-template-columns: 1fr; }
+}
+
 /* Era token transitions - swaps between [data-era] selectors animate over 600ms. */
-body, .game-shell, .landing-screen, .ending-screen,
-.card-view, .quality-track, .quality-fill,
-.card-action, .primary-action, .choice-hint, .portrait-slot, .mute-toggle {
+body, .game-shell, .landing-screen, .onboarding-screen, .ending-screen,
+.card-view, .quality-track, .card-action, .primary-action, .choice-hint,
+.portrait-slot, .mute-toggle, .meter-guide, .onboarding-skip {
   transition:
     background-color 600ms ease,
     color 600ms ease,

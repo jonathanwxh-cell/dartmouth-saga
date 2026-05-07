@@ -20,7 +20,7 @@ function MeterDelta({ quality, change, eventId }: MeterDeltaProps) {
 
   useEffect(() => {
     setVisible(true);
-    const timeout = window.setTimeout(() => setVisible(false), 1000);
+    const timeout = window.setTimeout(() => setVisible(false), 1500);
     return () => window.clearTimeout(timeout);
   }, [eventId]);
 
@@ -33,7 +33,7 @@ function MeterDelta({ quality, change, eventId }: MeterDeltaProps) {
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: [0, 1, 0], y: [0, 0, -18] }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1, times: [0, 0.25, 1], ease: 'easeOut' }}
+          transition={{ duration: 1.5, times: [0, 0.25, 1], ease: 'easeOut' }}
         >
           {qualityFullNames[quality]} {formatDelta(change.delta)}
         </motion.span>

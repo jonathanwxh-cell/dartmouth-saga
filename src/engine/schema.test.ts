@@ -12,8 +12,8 @@ describe('cardSchema', () => {
         label: 'Write letter',
         effects: { funding: -12, academic_credibility: 8 },
         flags: ['funding-letter-sent'],
-        nextCardId: 'followup-card'
-      }
+        nextCardId: 'followup-card',
+      },
     });
 
     expect(cardSchema.parse(card).id).toBe('sample-card');
@@ -22,10 +22,36 @@ describe('cardSchema', () => {
   it('accepts a minimal valid card', () => {
     const card = makeCard({
       speaker: { name: 'John McCarthy', portrait: 'mccarthy.png' },
-      left: { label: 'Pause', effects: {} }
+      left: { label: 'Pause', effects: {} },
     });
 
     expect(cardSchema.parse(card).speaker.title).toBeUndefined();
+  });
+
+  it('accepts a card with is_interstitial: true and empty speaker fields', () => {
+    const card = {
+      ...makeCard({
+        id: 'interstitial-week-one-ends',
+        speaker: { name: '', portrait: '' },
+        left: { label: 'Continue', effects: {}, flags: ['interstitial-week-one-shown'] },
+        right: { label: 'Continue', effects: {}, flags: ['interstitial-week-one-shown'] },
+      }),
+      is_interstitial: true,
+    };
+
+    expect(cardSchema.parse(card).is_interstitial).toBe(true);
+  });
+
+  it.each(['letter', 'newswire', 'notebook'] as const)('accepts a card with form: "%s"', (form) => {
+    const card = { ...makeCard(), form };
+
+    expect(cardSchema.parse(card).form).toBe(form);
+  });
+
+  it('rejects a card with form: "unknown"', () => {
+    const card = { ...makeCard(), form: 'unknown' };
+
+    expect(() => cardSchema.parse(card)).toThrow(/form/);
   });
 
   it('rejects a card with an unknown quality key', () => {
@@ -33,8 +59,8 @@ describe('cardSchema', () => {
       ...makeCard(),
       left: {
         label: 'Invent',
-        effects: { charisma: 10 }
-      }
+        effects: { charisma: 10 },
+      },
     };
 
     expect(() => cardSchema.parse(card)).toThrow(/charisma/);

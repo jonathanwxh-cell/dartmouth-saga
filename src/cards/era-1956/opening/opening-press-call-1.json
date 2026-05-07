@@ -2,6 +2,7 @@
   "id": "opening-press-call-1",
   "era": "1956",
   "weight": 5,
+  "form": "newswire",
   "flags_required": [
     "proposal-read"
   ],

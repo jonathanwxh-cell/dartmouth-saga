@@ -1,0 +1,21 @@
+{
+  "id": "notebook-after-logic-theorist",
+  "era": "1956",
+  "weight": 6,
+  "form": "notebook",
+  "flags_required": ["lt-demonstrated"],
+  "flags_forbidden": ["notebook-after-lt-written", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "Your notebook", "portrait": "" },
+  "prompt": "Late entry. After the Logic Theorist proved 2.45 the room was very quiet for thirty seconds. Then Newell asked for coffee and the silence broke. McCarthy looked at me as if he had forgotten I was in the room. Simon wrote on the chalkboard a sentence he later asked me to erase. I did not.",
+  "left": {
+    "label": "Erase nothing",
+    "effects": { "academic_credibility": 3, "team_morale": -2 },
+    "flags": ["notebook-after-lt-written", "chalkboard-preserved"]
+  },
+  "right": {
+    "label": "Erase the sentence after all",
+    "effects": { "team_morale": 2, "academic_credibility": -1 },
+    "flags": ["notebook-after-lt-written"]
+  }
+}

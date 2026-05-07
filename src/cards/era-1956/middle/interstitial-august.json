@@ -1,0 +1,21 @@
+{
+  "id": "interstitial-august",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "flags_required": ["middle-started", "lt-demonstrated", "rockefeller-progress-report-sent"],
+  "flags_forbidden": ["interstitial-august-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "August. The proposal sits half-typed. The Boston Globe ran a paragraph last week which Shannon has not mentioned. The Rockefeller envelope is on McCarthy's desk, unopened for three days. Outside, the leaves have not started turning.",
+  "left": {
+    "label": "Continue",
+    "effects": { "public_trust": 1 },
+    "flags": ["interstitial-august-shown"]
+  },
+  "right": {
+    "label": "Continue",
+    "effects": { "public_trust": 1 },
+    "flags": ["interstitial-august-shown"]
+  }
+}

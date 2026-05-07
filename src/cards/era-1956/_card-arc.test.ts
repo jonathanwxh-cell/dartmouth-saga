@@ -20,8 +20,8 @@ describe('1956 card arc', () => {
   const cards = loadEraCards();
   const cardById = new Map(cards.map((card) => [card.id, card]));
 
-  it('contains the full 80-card outline and no scaffold card', () => {
-    expect(cards).toHaveLength(80);
+  it('contains the full 87-card outline and no scaffold card', () => {
+    expect(cards).toHaveLength(87);
     expect(cardById.has('scaffolding-placeholder')).toBe(false);
   });
 
@@ -38,6 +38,33 @@ describe('1956 card arc', () => {
 
   it('the Rockefeller letter anchor has weight 100', () => {
     expect(cardById.get('closing-rockefeller-letter-arrives')?.weight).toBe(100);
+  });
+
+  it('includes the pacing interstitials and notebook cards', () => {
+    for (const id of [
+      'interstitial-week-one-ends',
+      'interstitial-mid-july',
+      'interstitial-august',
+      'interstitial-september-coming',
+    ]) {
+      expect(cardById.get(id)?.is_interstitial, id).toBe(true);
+    }
+
+    for (const id of [
+      'notebook-day-three',
+      'notebook-after-logic-theorist',
+      'notebook-night-before',
+    ]) {
+      expect(cardById.get(id)?.form, id).toBe('notebook');
+    }
+  });
+
+  it('marks selected existing cards with their pacing forms', () => {
+    expect(cardById.get('middle-wiener-letter-arrives')?.form).toBe('letter');
+    expect(cardById.get('closing-rockefeller-letter-arrives')?.form).toBe('letter');
+    expect(cardById.get('closing-shannon-final-letter')?.form).toBe('letter');
+    expect(cardById.get('middle-press-time-magazine')?.form).toBe('newswire');
+    expect(cardById.get('opening-press-call-1')?.form).toBe('newswire');
   });
 
   it('nextCardId chains resolve to existing card IDs in the pool', () => {
@@ -95,6 +122,15 @@ describe('1956 card arc', () => {
 
   it('every portrait reference uses a png filename', () => {
     for (const card of cards as Card[]) {
+      if (
+        card.is_interstitial ||
+        card.form === 'letter' ||
+        card.form === 'newswire' ||
+        card.form === 'notebook'
+      ) {
+        continue;
+      }
+
       expect(card.speaker.portrait).toMatch(/^[a-z0-9-]+\.png$/);
     }
   });

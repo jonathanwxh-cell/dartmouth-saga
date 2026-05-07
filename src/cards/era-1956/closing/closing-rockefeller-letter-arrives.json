@@ -2,6 +2,7 @@
   "id": "closing-rockefeller-letter-arrives",
   "era": "1956",
   "weight": 100,
+  "form": "letter",
   "flags_required": [
     "closing-started"
   ],

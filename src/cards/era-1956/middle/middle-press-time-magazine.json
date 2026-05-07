@@ -2,6 +2,7 @@
   "id": "middle-press-time-magazine",
   "era": "1956",
   "weight": 6,
+  "form": "newswire",
   "flags_required": [
     "middle-started",
     "press-noticed"

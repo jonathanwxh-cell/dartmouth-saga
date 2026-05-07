@@ -468,6 +468,13 @@ The Hanover summer ends. The proposal is filed. Whatever you've built, you've bu
 
 ---
 
+## Card forms
+- `standard` is the default card form: speaker title/name, portrait slot, centered prompt, and the regular two-choice swipe controls.
+- `letter` is for received correspondence. It suppresses portraits and renders a return-address line, date stamp, justified body, and signature.
+- `newswire` is for press/dispatch cards. It suppresses portraits, uses the mono face, and closes with a source/date line.
+- `notebook` is for player-perspective field notes. It suppresses portraits, uses lined paper styling, and keeps normal effects/flags like any other card.
+- `is_interstitial` marks calendar beat cards. These suppress speaker rendering entirely, use a calendar-page header, usually mirror "Continue" on both choices, and should stay rare enough to pace the run without clustering.
+
 ## Notes for Phase 4b
 - Every card's `prompt` should be 1–4 sentences in the tone of Suzerain × Universal Paperclips.
 - Every prompt must name a real person, paper, place, or amount — at least one. The McCarthy/Shannon/Minsky/Rochester/Newell/Simon/Solomonoff/Selfridge/Samuel/More cast is correct.

@@ -1,0 +1,21 @@
+{
+  "id": "interstitial-mid-july",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "flags_required": ["middle-started", "lt-demonstrated"],
+  "flags_forbidden": ["interstitial-mid-july-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "Mid-July. The IBM 704 link is up most days. Steele Hall has not been this full since 1948. Solomonoff has set up at the corner desk and shows no sign of leaving. McCarthy is doodling recursive function definitions on the back of every napkin in the kitchen.",
+  "left": {
+    "label": "Continue",
+    "effects": { "academic_credibility": 1 },
+    "flags": ["interstitial-mid-july-shown"]
+  },
+  "right": {
+    "label": "Continue",
+    "effects": { "academic_credibility": 1 },
+    "flags": ["interstitial-mid-july-shown"]
+  }
+}

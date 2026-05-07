@@ -6,10 +6,11 @@ const qualityKeys = [
   'public_trust',
   'academic_credibility',
   'compute',
-  'team_morale'
+  'team_morale',
 ] as const;
 
 const eraKeys = ['1956', '1974', '1980', '1987', '1993', '2012', '2020'] as const;
+const formKeys = ['standard', 'letter', 'newswire', 'notebook'] as const;
 
 const effectSchema = z
   .object({
@@ -18,7 +19,7 @@ const effectSchema = z
     public_trust: z.number().optional(),
     academic_credibility: z.number().optional(),
     compute: z.number().optional(),
-    team_morale: z.number().optional()
+    team_morale: z.number().optional(),
   })
   .strict();
 
@@ -32,10 +33,13 @@ const requiresSchema = z
 
 const choiceSchema = z
   .object({
-    label: z.string().min(1).max(24),
+    label: z.string().min(1).max(32),
     effects: effectSchema,
     flags: z.array(z.string().min(1)).optional(),
-    nextCardId: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).optional()
+    nextCardId: z
+      .string()
+      .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
+      .optional(),
   })
   .strict();
 
@@ -48,18 +52,39 @@ export const cardSchema = z
     flags_required: z.array(z.string().min(1)).optional(),
     flags_forbidden: z.array(z.string().min(1)).optional(),
     one_shot: z.boolean().optional(),
+    is_interstitial: z.boolean().optional(),
+    form: z.enum(formKeys).optional(),
     speaker: z
       .object({
-        name: z.string().min(1),
-        portrait: z.string().min(1),
-        title: z.string().min(1).optional()
+        name: z.string(),
+        portrait: z.string(),
+        title: z.string().min(1).optional(),
       })
       .strict(),
     prompt: z.string().min(1),
     left: choiceSchema,
-    right: choiceSchema
+    right: choiceSchema,
   })
-  .strict();
+  .strict()
+  .superRefine((card, ctx) => {
+    if (card.is_interstitial) return;
+
+    if (card.speaker.name.length === 0) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['speaker', 'name'],
+        message: 'speaker.name is required for non-interstitial cards',
+      });
+    }
+
+    if ((card.form ?? 'standard') === 'standard' && card.speaker.portrait.length === 0) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['speaker', 'portrait'],
+        message: 'speaker.portrait is required for standard cards',
+      });
+    }
+  });
 
 export const cardArraySchema = z.array(cardSchema);
 

@@ -56,7 +56,12 @@ export function loadEndingStats(): EndingStats {
 
 export function saveEndingStats(stats: EndingStats) {
   if (!hasLocalStorage()) return;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+  } catch {
+    // Quota or locked-down embeds can reject storage writes; ending
+    // stats are non-critical, so swallow.
+  }
 }
 
 export function recordEndingDiscovered(stats: EndingStats, endingId: string): EndingStats {

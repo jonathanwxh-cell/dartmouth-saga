@@ -127,7 +127,7 @@ function rebuildFromSnapshot(snapshot: LoadedSnapshot) {
     rng,
     seed: snapshot.seed,
     lastEvent: null,
-    tutorialSeen: snapshot.tutorialSeen || readTutorialSeen(),
+    tutorialSeen: snapshot.tutorialSeen,
     endingStats: loadEndingStats(),
     swipesThisRun: snapshot.swipesThisRun,
     lastDiscoveryWasNew: false

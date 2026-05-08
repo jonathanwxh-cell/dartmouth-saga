@@ -1,0 +1,17 @@
+{
+  "id": "trajectory-warn-cpu-high",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "compute": [85, 100]
+  },
+  "flags_required": ["middle-started"],
+  "flags_forbidden": ["trajectory-warn-cpu-high-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "Rochester has secured a second 704 link. There is more output than there is paper to read it on.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-cpu-high-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-cpu-high-shown"] }
+}

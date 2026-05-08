@@ -1,0 +1,17 @@
+{
+  "id": "trajectory-warn-prog-low",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "symbolic_progress": [0, 15]
+  },
+  "flags_required": ["middle-started"],
+  "flags_forbidden": ["trajectory-warn-prog-low-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "The IBM 704 has run nothing nontrivial in two weeks. Solomonoff has begun spending his evenings at the library.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-prog-low-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-prog-low-shown"] }
+}

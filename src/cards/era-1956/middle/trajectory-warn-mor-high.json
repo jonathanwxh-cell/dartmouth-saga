@@ -1,0 +1,17 @@
+{
+  "id": "trajectory-warn-mor-high",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "team_morale": [85, 100]
+  },
+  "flags_required": ["middle-started"],
+  "flags_forbidden": ["trajectory-warn-mor-high-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "Everyone is happy. The kitchen is full at lunch, the swimming proposals have become a daily ritual. No one has disagreed with anyone in nine days.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-mor-high-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-mor-high-shown"] }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "trajectory-warn-cpu-low",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "compute": [0, 15]
+  },
+  "flags_required": ["middle-started"],
+  "flags_forbidden": ["trajectory-warn-cpu-low-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "The 704 is offline through August. The participants have moved to chalkboard work, which is slower than chalk.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-cpu-low-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-cpu-low-shown"] }
+}

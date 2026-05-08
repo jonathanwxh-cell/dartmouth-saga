@@ -1,0 +1,17 @@
+{
+  "id": "trajectory-late-bureaucrat",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "symbolic_progress": [0, 59]
+  },
+  "flags_required": ["closing-started", "proposal-opening-set"],
+  "flags_forbidden": ["trajectory-late-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "The proposal will go out on Monday. The names on it are not all the names you respect. You are the one who typed them in the order requested. There is a quality of grace in being good at logistics.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-late-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-late-shown"] }
+}

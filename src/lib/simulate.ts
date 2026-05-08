@@ -37,8 +37,36 @@ function baseState(): GameState {
   };
 }
 
-function chooseSide(policy: ChoicePolicy, rng: () => number): ChoiceSide {
-  if (policy === 'random') return rng() < 0.5 ? 'left' : 'right';
+function sameFlags(left: string[] = [], right: string[] = []) {
+  if (left.length !== right.length) return false;
+  const rightFlags = new Set(right);
+  return left.every((flag) => rightFlags.has(flag));
+}
+
+function sameEffects(left: Card['left']['effects'], right: Card['right']['effects']) {
+  return qualityKeys.every((quality) => (left[quality] ?? 0) === (right[quality] ?? 0));
+}
+
+function hasNoQualityEffects(effects: Card['left']['effects']) {
+  return qualityKeys.every((quality) => effects[quality] === undefined);
+}
+
+function choicesHaveSamePauseOutcome(card: Card) {
+  return (
+    hasNoQualityEffects(card.left.effects) &&
+    hasNoQualityEffects(card.right.effects) &&
+    sameEffects(card.left.effects, card.right.effects) &&
+    sameFlags(card.left.flags, card.right.flags) &&
+    card.left.nextCardId === card.right.nextCardId
+  );
+}
+
+function chooseSide(policy: ChoicePolicy, card: Card, rng: () => number): ChoiceSide {
+  if (policy === 'random') {
+    if (choicesHaveSamePauseOutcome(card)) return 'left';
+    return rng() < 0.5 ? 'left' : 'right';
+  }
+
   return policy;
 }
 
@@ -53,7 +81,7 @@ export function simulateRun(
   let swipeCount = 0;
 
   while (currentCard) {
-    const side = chooseSide(choicePolicy, rng);
+    const side = chooseSide(choicePolicy, currentCard, rng);
     const result = applyChoice(state, currentCard, side);
     state = result.state;
     swipeCount += 1;

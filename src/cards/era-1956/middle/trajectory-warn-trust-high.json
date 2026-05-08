@@ -1,0 +1,17 @@
+{
+  "id": "trajectory-warn-trust-high",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "public_trust": [85, 100]
+  },
+  "flags_required": ["middle-started"],
+  "flags_forbidden": ["trajectory-warn-trust-high-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "The Boston Globe ran a profile last weekend. Two photographers from Time are due Tuesday. The dean's secretary is now your dean's secretary.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-trust-high-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-trust-high-shown"] }
+}

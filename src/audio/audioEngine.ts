@@ -38,12 +38,20 @@ class AudioEngine {
       src: [src],
       loop: true,
       volume: DEFAULT_VOLUME,
-      html5: false,
+      html5: true,
       mute: this.muted
     });
   }
 
   play() {
+    if (!this.sound || this.sound.playing()) return;
+
+    const id = this.sound.play();
+    this.sound.volume(0, id);
+    this.sound.fade(0, DEFAULT_VOLUME, FADE_IN_MS, id);
+  }
+
+  unlock() {
     if (!this.sound || this.sound.playing()) return;
 
     const id = this.sound.play();

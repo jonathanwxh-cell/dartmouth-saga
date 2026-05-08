@@ -1,4 +1,5 @@
 import { qualityFullNames, qualityMeta } from './QualityMeters';
+import { audioEngine } from '../audio/audioEngine';
 import { useGameStore } from '../state/store';
 
 function Onboarding() {
@@ -9,6 +10,7 @@ function Onboarding() {
   if (tutorialSeen) return null;
 
   const begin = () => {
+    audioEngine.unlock();
     markTutorialSeen();
     init();
   };

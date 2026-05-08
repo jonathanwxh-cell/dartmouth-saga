@@ -17,6 +17,7 @@ const storageKey = 'dartmouth-saga:audio-muted';
 describe('audioEngine', () => {
   beforeEach(() => {
     vi.resetModules();
+    vi.clearAllMocks();
     localStorage.clear();
   });
 
@@ -43,5 +44,35 @@ describe('audioEngine', () => {
     const { audioEngine } = await import('./audioEngine');
 
     expect(audioEngine.getMuted()).toBe(true);
+  });
+
+  it('loads sounds through the html5 audio path', async () => {
+    const { Howl } = await import('howler');
+    const { audioEngine } = await import('./audioEngine');
+
+    audioEngine.load('/audio/test.mp3');
+
+    expect(Howl).toHaveBeenCalledWith(
+      expect.objectContaining({
+        html5: true
+      })
+    );
+  });
+
+  it('unlock() does nothing when sound is not loaded', async () => {
+    const { audioEngine } = await import('./audioEngine');
+
+    expect(() => audioEngine.unlock()).not.toThrow();
+  });
+
+  it('unlock() calls play on the loaded sound when not already playing', async () => {
+    const { Howl } = await import('howler');
+    const { audioEngine } = await import('./audioEngine');
+
+    audioEngine.load('/audio/test.mp3');
+    audioEngine.unlock();
+
+    const sound = vi.mocked(Howl).mock.results[0]?.value;
+    expect(sound.play).toHaveBeenCalledOnce();
   });
 });

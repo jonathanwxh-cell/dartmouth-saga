@@ -1,3 +1,7 @@
+import type { Card } from './schema';
+
+export type { Card };
+
 export type Quality =
   | 'symbolic_progress'
   | 'funding'
@@ -17,26 +21,6 @@ export interface Choice {
   effects: Partial<Record<Quality, number>>;
   flags?: string[];
   nextCardId?: string;
-}
-
-export interface Card {
-  id: string;
-  era: Era;
-  weight: number;
-  requires?: Partial<Record<Quality, [min: number, max: number]>>;
-  flags_required?: string[];
-  flags_forbidden?: string[];
-  one_shot?: boolean;
-  is_interstitial?: boolean;
-  form?: CardForm;
-  speaker: {
-    name: string;
-    portrait: string;
-    title?: string;
-  };
-  prompt: string;
-  left: Choice;
-  right: Choice;
 }
 
 export interface GameState {

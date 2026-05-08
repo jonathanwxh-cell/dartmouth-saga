@@ -5,8 +5,11 @@ import {
   endingHints,
   selectEnding
 } from './era-1956';
+import { loadCards } from '../engine/loadCards';
 import { makeState, qualities } from '../engine/testFixtures';
 import { simulateRun } from '../lib/simulate';
+
+const era1956Pool = loadCards().filter((card) => card.era === '1956');
 
 describe('selectEnding', () => {
   it('pool-exhausted with high stats returns proposal-funded', () => {
@@ -84,19 +87,19 @@ describe('selectEnding', () => {
   });
 
   it('proposal-funded ending is reachable from at least one seeded random-policy run', () => {
-    const results = Array.from({ length: 500 }, (_, offset) => simulateRun(42 + offset, 'random'));
+    const results = Array.from({ length: 500 }, (_, offset) => simulateRun(42 + offset, era1956Pool, 'random'));
 
     expect(results.some((result) => result.endingId === 'proposal-funded')).toBe(true);
   });
 
   it('partial ending is reachable from at least one seeded random-policy run', () => {
-    const results = Array.from({ length: 500 }, (_, offset) => simulateRun(42 + offset, 'random'));
+    const results = Array.from({ length: 500 }, (_, offset) => simulateRun(42 + offset, era1956Pool, 'random'));
 
     expect(results.some((result) => result.endingId === 'partial')).toBe(true);
   });
 
   it('canceled ending is reachable from at least one seeded random-policy run', () => {
-    const results = Array.from({ length: 500 }, (_, offset) => simulateRun(42 + offset, 'random'));
+    const results = Array.from({ length: 500 }, (_, offset) => simulateRun(42 + offset, era1956Pool, 'random'));
 
     expect(results.some((result) => result.endingId === 'canceled')).toBe(true);
   });

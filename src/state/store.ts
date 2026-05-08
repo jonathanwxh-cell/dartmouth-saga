@@ -178,10 +178,10 @@ export const useGameStore = create<GameStore>()(
         void saveSnapshot(get()).catch(() => undefined);
       },
       swipe: (side) => {
-        const { currentCard, gameOver, pool, rng, swipesThisRun, endingStats } = get();
+        const { currentCard, gameOver, pool, rng, swipesThisRun, endingStats, qualities, flags, seenIds, era } = get();
         if (gameOver || !currentCard) return;
 
-        const result = applyChoice(get(), currentCard, side);
+        const result = applyChoice({ qualities, flags, seenIds, currentCard, era }, currentCard, side);
         const nextSwipeCount = swipesThisRun + 1;
         const boundary = checkBoundaryEnd(result.state);
         if (boundary) {

@@ -33,7 +33,11 @@ export function parseCardModules(modules: Record<string, unknown>): Card[] {
     });
 }
 
+let cachedCards: Card[] | null = null;
+
 export function loadCards(): Card[] {
+  if (cachedCards) return cachedCards;
   const modules = import.meta.glob('/src/cards/**/*.json', { eager: true });
-  return parseCardModules(modules);
+  cachedCards = parseCardModules(modules);
+  return cachedCards;
 }

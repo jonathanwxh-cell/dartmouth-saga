@@ -2,9 +2,8 @@ import { checkBoundaryEnd } from '../engine/endings';
 import { selectNextCard } from '../engine/deck';
 import { createRng } from '../engine/rng';
 import { applyChoice } from '../engine/resolver';
-import type { ChoiceSide, GameState, Quality } from '../engine/types';
+import type { Card, ChoiceSide, GameState, Quality } from '../engine/types';
 import { selectEnding } from '../endings/era-1956';
-import { era1956Cards } from '../cards/era-1956';
 
 const qualityKeys: Quality[] = [
   'symbolic_progress',
@@ -43,9 +42,12 @@ function chooseSide(policy: ChoicePolicy, rng: () => number): ChoiceSide {
   return policy;
 }
 
-export function simulateRun(seed: number, choicePolicy: ChoicePolicy = 'random'): RunResult {
+export function simulateRun(
+  seed: number,
+  pool: Card[],
+  choicePolicy: ChoicePolicy = 'random'
+): RunResult {
   const rng = createRng(seed);
-  const pool = era1956Cards;
   let state = baseState();
   let currentCard = selectNextCard(state, pool, rng);
   let swipeCount = 0;
@@ -95,12 +97,13 @@ export function simulateRun(seed: number, choicePolicy: ChoicePolicy = 'random')
 export function simulateMany(
   count: number,
   seedBase: number,
+  pool: Card[],
 ): { distribution: Record<string, number>; medianSwipes: number } {
   const distribution: Record<string, number> = {};
   const swipeCounts: number[] = [];
 
   for (let offset = 0; offset < count; offset += 1) {
-    const result = simulateRun(seedBase + offset);
+    const result = simulateRun(seedBase + offset, pool);
     distribution[result.endingId] = (distribution[result.endingId] ?? 0) + 1;
     swipeCounts.push(result.swipeCount);
   }

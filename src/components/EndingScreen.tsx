@@ -4,14 +4,26 @@ import { ALL_ENDINGS, selectEnding } from '../endings/era-1956';
 import { useGameStore } from '../state/store';
 
 function EndingScreen() {
-  const state = useGameStore();
+  const gameOver = useGameStore((s) => s.gameOver);
+  const qualities = useGameStore((s) => s.qualities);
+  const flags = useGameStore((s) => s.flags);
+  const seenIds = useGameStore((s) => s.seenIds);
+  const currentCard = useGameStore((s) => s.currentCard);
+  const era = useGameStore((s) => s.era);
+  const endingStats = useGameStore((s) => s.endingStats);
+  const lastDiscoveryWasNew = useGameStore((s) => s.lastDiscoveryWasNew);
+  const swipesThisRun = useGameStore((s) => s.swipesThisRun);
+  const reset = useGameStore((s) => s.reset);
 
-  if (!state.gameOver) return null;
+  if (!gameOver) return null;
 
-  const ending = selectEnding(state, state.gameOver);
-  const discoveredCount = Object.keys(state.endingStats.discovered).length;
+  const ending = selectEnding(
+    { qualities, flags, seenIds, currentCard, era },
+    gameOver
+  );
+  const discoveredCount = Object.keys(endingStats.discovered).length;
   const wasNewDiscovery =
-    state.lastDiscoveryWasNew && state.endingStats.discovered[ending.id]?.count === 1;
+    lastDiscoveryWasNew && endingStats.discovered[ending.id]?.count === 1;
 
   return (
     <main className="ending-screen" aria-labelledby="ending-title">
@@ -31,10 +43,10 @@ function EndingScreen() {
         <p>{ending.narrative}</p>
         {ending.footer ? <p className="ending-footer">{ending.footer}</p> : null}
         <p className="run-summary-line">
-          Endings: {discoveredCount} / {ALL_ENDINGS.length} · This run lasted {state.swipesThisRun}{' '}
+          Endings: {discoveredCount} / {ALL_ENDINGS.length} · This run lasted {swipesThisRun}{' '}
           swipes
         </p>
-        <button className="primary-action" type="button" onClick={state.reset}>
+        <button className="primary-action" type="button" onClick={reset}>
           <RotateCcw aria-hidden="true" size={18} />
           Begin again
         </button>

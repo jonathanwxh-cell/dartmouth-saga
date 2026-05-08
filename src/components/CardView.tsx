@@ -113,7 +113,7 @@ function LetterCard({ card }: { card: Card }) {
     <>
       <header className="card-letter-header">
         <p>From {card.speaker.title ?? card.speaker.name}</p>
-        <span>1956</span>
+        <span>{card.era}</span>
       </header>
       <p className="card-prompt card-letter-prompt">{card.prompt}</p>
       <p className="card-letter-signature">{card.speaker.name}</p>

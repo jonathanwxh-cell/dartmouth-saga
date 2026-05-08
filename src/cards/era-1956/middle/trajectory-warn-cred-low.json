@@ -1,0 +1,17 @@
+{
+  "id": "trajectory-warn-cred-low",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "academic_credibility": [0, 15]
+  },
+  "flags_required": ["middle-started"],
+  "flags_forbidden": ["trajectory-warn-cred-low-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "A note from Princeton arrives politely declining to sign anything you've written. The Wiener letter circulates with handwritten margin notes.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-cred-low-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-cred-low-shown"] }
+}

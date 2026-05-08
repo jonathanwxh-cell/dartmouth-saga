@@ -1,0 +1,17 @@
+{
+  "id": "trajectory-warn-fund-high",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "funding": [85, 100]
+  },
+  "flags_required": ["middle-started"],
+  "flags_forbidden": ["trajectory-warn-fund-high-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "Rockefeller has asked Weaver if you might also serve on a foundation advisory committee. The IBM 704 hours come faster than they can be used.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-fund-high-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-fund-high-shown"] }
+}

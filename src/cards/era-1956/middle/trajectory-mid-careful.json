@@ -1,0 +1,18 @@
+{
+  "id": "trajectory-mid-careful",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "academic_credibility": [70, 100],
+    "symbolic_progress": [0, 79]
+  },
+  "flags_required": ["middle-started", "lt-demonstrated"],
+  "flags_forbidden": ["trajectory-mid-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "Shannon mentioned your name to Wiener last week, in good standing. McCarthy has started waiting for your nod before changing the proposal language. The room sees you as the one who keeps the record straight.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-mid-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-mid-shown"] }
+}

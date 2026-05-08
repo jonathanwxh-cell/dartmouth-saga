@@ -1,0 +1,17 @@
+{
+  "id": "trajectory-warn-trust-low",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "public_trust": [0, 15]
+  },
+  "flags_required": ["middle-started"],
+  "flags_forbidden": ["trajectory-warn-trust-low-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "The dean's office no longer takes calls about the workshop. A trustee inquired this morning about whether the room could be reassigned for September.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-trust-low-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-trust-low-shown"] }
+}

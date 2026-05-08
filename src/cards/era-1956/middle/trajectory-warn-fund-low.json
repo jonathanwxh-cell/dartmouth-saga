@@ -1,0 +1,17 @@
+{
+  "id": "trajectory-warn-fund-low",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "funding": [0, 15]
+  },
+  "flags_required": ["middle-started"],
+  "flags_forbidden": ["trajectory-warn-fund-low-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "The chalk allowance has been frozen. You are personally covering reams of ditto paper from your stipend, which is also frozen.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-fund-low-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-fund-low-shown"] }
+}

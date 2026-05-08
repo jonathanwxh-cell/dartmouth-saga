@@ -1,0 +1,18 @@
+{
+  "id": "trajectory-mid-stable",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "symbolic_progress": [0, 69],
+    "academic_credibility": [0, 69]
+  },
+  "flags_required": ["middle-started", "lt-demonstrated"],
+  "flags_forbidden": ["trajectory-mid-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "The proposal is half-typed. You have not made any enemies, and you have not yet made the kind of friend who will defend you in a hallway. It is still possible, in either direction.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-mid-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-mid-shown"] }
+}

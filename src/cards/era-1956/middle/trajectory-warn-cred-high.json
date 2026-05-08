@@ -1,0 +1,17 @@
+{
+  "id": "trajectory-warn-cred-high",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "academic_credibility": [85, 100]
+  },
+  "flags_required": ["middle-started"],
+  "flags_forbidden": ["trajectory-warn-cred-high-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "The other workshops at MIT are starting to defer to you in correspondence. Norbert Wiener's silence has shifted from skeptical to formal.",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-cred-high-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-warn-cred-high-shown"] }
+}

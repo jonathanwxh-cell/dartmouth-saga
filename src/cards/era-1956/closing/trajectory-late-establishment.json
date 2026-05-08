@@ -1,0 +1,20 @@
+{
+  "id": "trajectory-late-establishment",
+  "era": "1956",
+  "weight": 100,
+  "is_interstitial": true,
+  "form": "standard",
+  "requires": {
+    "symbolic_progress": [60, 100],
+    "academic_credibility": [60, 100],
+    "funding": [50, 100],
+    "public_trust": [50, 100]
+  },
+  "flags_required": ["closing-started", "proposal-opening-set"],
+  "flags_forbidden": ["trajectory-late-shown", "summer-ended"],
+  "one_shot": true,
+  "speaker": { "name": "", "portrait": "" },
+  "prompt": "By next summer the field will be a thing one applies to. You will be one of the names mentioned when grants are evaluated. The cover memo lists you, in the smallest typeface, as 'organizing assistant.'",
+  "left": { "label": "Continue", "effects": {}, "flags": ["trajectory-late-shown"] },
+  "right": { "label": "Continue", "effects": {}, "flags": ["trajectory-late-shown"] }
+}

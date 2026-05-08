@@ -75,6 +75,26 @@ describe('CardView', () => {
     expect(screen.getByText('Norbert Wiener')).toHaveClass('card-letter-signature');
   });
 
+  it('letter form labels the era from card.era, not a hardcoded year', () => {
+    const card = {
+      ...makeCard({
+        era: '1974',
+        speaker: {
+          name: 'Sir James Lighthill',
+          title: 'SRC',
+          portrait: 'missing-portrait.png',
+        },
+        prompt: 'A report has been commissioned and the tone is not warm.',
+      }),
+      form: 'letter' as const,
+    };
+
+    render(<CardView card={card} />);
+
+    expect(screen.getByText('1974')).toBeInTheDocument();
+    expect(screen.queryByText('1956')).not.toBeInTheDocument();
+  });
+
   it('renders the newswire form when card.form === "newswire"', () => {
     const card = {
       ...makeCard({
